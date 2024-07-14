@@ -26,7 +26,7 @@
             flex-direction: column;
             align-items: center;
         } 
-        /* Styles pour l'en-tête */
+        /* Styles pour l'en-tete */
         header {
             background-color: #4CAF50;
             padding: 20px;
@@ -46,7 +46,7 @@
             text-shadow: 3px 3px #45a049;
             margin: 0;
         }
-              /* Styles pour le titre centré */
+              /* Styles pour le titre centre */
         .centered-title {
             text-align: center;
             font-size: 24px;
@@ -59,7 +59,7 @@
             font-size: 1.2em;
             margin-top: 10px;
         }
-        /* Styles pour le sélecteur d'années */
+        /* Styles pour le selecteur d'annees */
         .year-selector {
             text-align: center;
             margin: 20px 0;
@@ -67,7 +67,7 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-        /* Styles pour les boutons d'année */
+        /* Styles pour les boutons d'annee */
         .year-button {
             background-color: #3498db;
             border: none;
@@ -82,49 +82,49 @@
             border-radius: 25px;
             transition: background-color 0.3s, transform 0.3s;
         }
-            /* Styles au survol des boutons d'année */
+            /* Styles au survol des boutons d'annee */
             .year-button:hover:not(.disabled) {
                 background-color: #2980b9;
                 transform: scale(1.1);
             }
-            /* Styles pour les boutons d'année actifs */
+            /* Styles pour les boutons d'annee actifs */
             .year-button.active {
                 background-color: #e67e22;
             }
-            /* Styles pour les boutons d'année sélectionnés */
+            /* Styles pour les boutons d'annee selectionnes */
             .year-button.selected {
                 background-color: #9b59b6;
                 color: white;
                 font-weight: bold;
             }
-            /* Styles pour les boutons d'année cliqués */
+            /* Styles pour les boutons d'annee cliques */
             .year-button.clicked {
                 background-color: #9b59b6;
                 color: white;
                 font-weight: bold;
             }
-                /* Styles pour assurer la réactivité */
+                /* Styles pour assurer la reactivite */
         @media (max-width: 600px) {
             h1 {
-                font-size: 2em; /* Réduire la taille de la police sur les petits écrans */
+                font-size: 2em; /* Reduire la taille de la police sur les petits ecrans */
             }
             .centered-title {
-                font-size: 20px; /* Réduire la taille de la police sur les petits écrans */
+                font-size: 20px; /* Reduire la taille de la police sur les petits ecrans */
             }
             header {
-                padding: 15px; /* Réduire le padding sur les petits écrans */
+                padding: 15px; /* Reduire le padding sur les petits ecrans */
             }
         }
-        /* Styles pour la grille de vidéos */
+        /* Styles pour la grille de videos */
         .video-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px; /* Réduire l'espace entre les cartes */
+            gap: 10px; /* Reduire l'espace entre les cartes */
             max-width: 2000px; /* Augmenter la largeur maximale de la grille */
         }
 
-        /* Styles pour les cartes vidéo */
+        /* Styles pour les cartes video */
         .video-card {
             background-color: #fff;
             border-radius: 15px;
@@ -132,60 +132,60 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-            width: 200px; /* Garder la largeur des cartes vidéo */
-            margin: 5px; /* Réduire la marge pour permettre plus de cartes par ligne */
+            width: 200px; /* Garder la largeur des cartes video */
+            margin: 5px; /* Reduire la marge pour permettre plus de cartes par ligne */
         }
-            /* Styles au survol des cartes vidéo */
+            /* Styles au survol des cartes video */
             .video-card:hover {
                 transform: scale(1.05) rotate(2deg);
                 box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        /* Styles pour les miniatures vidéo */
+        /* Styles pour les miniatures video */
         .video-thumbnail {
             width: 100%;
             height: 120px;
             object-fit: cover;
         }
-        /* Styles pour les informations vidéo */
+        /* Styles pour les informations video */
         .video-info {
             padding: 10px; /* Garder un padding normal pour la zone blanche */
-            height: 70px; /* Ajouter une hauteur fixe si nécessaire pour garantir la hauteur */
-            position: relative; /* Position relative pour l'élément contenant */
+            height: 70px; /* Ajouter une hauteur fixe si necessaire pour garantir la hauteur */
+            position: relative; /* Position relative pour l'element contenant */
         }
 
-        /* Styles pour le titre vidéo */
+        /* Styles pour le titre video */
         .video-title {
             font-weight: bold;
             font-size: 0.9em;
             margin: 0;
             color: #27ae60;
-            position: absolute; /* Position absolue pour déplacer le titre */
-            top: 5px; /* Ajuster cette valeur pour déplacer le titre vers le haut */
+            position: absolute; /* Position absolue pour deplacer le titre */
+            top: 5px; /* Ajuster cette valeur pour deplacer le titre vers le haut */
         }
 
-        /* Styles pour la description vidéo */
+        /* Styles pour la description video */
         .video-description {
             font-family: 'Open Sans', Arial, sans-serif; /* Police pour les descriptions */
             font-size: 0.8em;
             color: #666;
             position: relative;
-            height: 100px; /* Augmenter la hauteur pour s'assurer que les carrés soient visibles */
+            height: 100px; /* Augmenter la hauteur pour s'assurer que les carres soient visibles */
             display: flex;
             flex-direction: column;
             justify-content: flex-start; /* S'assurer que le texte commence en haut */
-            align-items: flex-start; /* Aligner les éléments à gauche */
-            padding-top: 18px; /* Ajouter un espace supérieur pour abaisser le texte */
-            text-align: left; /* Aligner le texte à gauche */
+            align-items: flex-start; /* Aligner les elements a gauche */
+            padding-top: 18px; /* Ajouter un espace superieur pour abaisser le texte */
+            text-align: left; /* Aligner le texte a gauche */
         }
 
         .centered-squares {
-            align-self: center; /* Centrer les carrés */
-            margin-top: 5px; /* Utiliser margin-top pour pousser les carrés vers le bas */
-            font-size: 1.2em; /* Ajustez la taille de la police si nécessaire */
+            align-self: center; /* Centrer les carres */
+            margin-top: 5px; /* Utiliser margin-top pour pousser les carres vers le bas */
+            font-size: 1.2em; /* Ajustez la taille de la police si necessaire */
         }
 
-        /* Styles pour les métadonnées vidéo */
+        /* Styles pour les metadonnees video */
         .video-meta {
             display: flex;
             justify-content: space-between;
@@ -199,12 +199,12 @@
             width: 100px;
             animation: bounce 2s infinite;
         }
-        /* Styles pour la mascotte à droite */
+        /* Styles pour la mascotte a droite */
         .mascot-right {
             bottom: 20px;
             right: 20px;
         }
-        /* Styles pour la mascotte à gauche */
+        /* Styles pour la mascotte a gauche */
         .mascot-left {
             bottom: 20px;
             left: 20px;
@@ -240,7 +240,7 @@
                 background-color: #27ae60;
                 transform: scale(1.05);
             }
-        /* Styles pour la fenêtre modale */
+        /* Styles pour la fenetre modale */
         .modal {
             display: none;
             position: fixed;
@@ -252,7 +252,7 @@
             overflow: auto;
             background-color: rgba(0,0,0,0.4);
         }
-        /* Styles pour le contenu de la fenêtre modale */
+        /* Styles pour le contenu de la fenetre modale */
         .modal-content {
             background-color: #fefefe;
             margin: 15% auto;
@@ -276,7 +276,7 @@
                 text-decoration: none;
                 cursor: pointer;
             }
-        /* Styles pour les entrées dans la fenêtre modale */
+        /* Styles pour les entrees dans la fenetre modale */
         .modal input, .modal textarea {
             width: 100%;
             padding: 10px;
@@ -284,7 +284,7 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-        /* Styles pour les boutons dans la fenêtre modale */
+        /* Styles pour les boutons dans la fenetre modale */
         .modal button {
             background-color: #3498db;
             color: white;
@@ -299,7 +299,7 @@
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
         }
-            /* Styles au survol des boutons dans la fenêtre modale */
+            /* Styles au survol des boutons dans la fenetre modale */
             .modal button:hover {
                 background-color: #2980b9;
                 transform: scale(1.05);
@@ -314,7 +314,7 @@
             <div class="subtitle">Awesome Adventures!</div>
         </header>
 
-        <!-- Sélecteur d'années -->
+        <!-- Selecteur d'annees -->
         <div class="year-selector">
             <button class="year-button selected clicked" data-year="2024">2024</button>
             <button class="year-button" data-year="2023">2023</button>
@@ -327,13 +327,12 @@
             <button class="year-button" data-year="2016">2016</button>
             <button class="year-button" data-year="2015">2015</button>
             <button class="year-button" data-year="2014">2014</button>
-            <button class="year-button" data-year-range="<<<<"><<<<</button>
+            <button class="year-button" data-year-range="&lt;&lt;&lt;&lt;">&lt;&lt;&lt;</button>
                     </div>
 
-        <!-- Grille de vidéos -->
+        <!-- Grille de videos -->
         <!-- 202404 -->
         <div class="video-grid">
-            <!----------------------------------------------------- 2024 ----------------------------------------------------------->
             <!-- 202404 -->
             <div class="video-card" data-year="2024">
                 <a href="https://www.youtube.com/watch?v=7xk_PXR03x0&autoplay=1&rel=0&modestbranding=1" target="_blank">
@@ -386,11 +385,10 @@
                     </div>
                 </div>
             </div>
-            <!----------------------------------------------------- 2023 ----------------------------------------------------------->
             <!-- 202317 -->
             <div class="video-card" data-year="2023">
                 <a href="https://youtu.be/OezDiE-bodE&autoplay=1&rel=0&modestbranding=1" target="_blank">
-                    <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202317%20-%20Christmas.jpg?raw=true" class="video-thumbnail">
+                    <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202317%20-%20Christmas.jpg?raw=true" alt="Christmas" class="video-thumbnail">
                 </a>
                 <div class="video-info">
                     <div class="video-title">Christmas</div>
@@ -428,7 +426,7 @@
             <!-- 202314 -->
             <div class="video-card" data-year="2023" style="display: none;">
                 <a href="https://youtu.be/NU09bgekoNE&autoplay=1&rel=0&modestbranding=1" target="_blank">
-                    <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202314%20-%20Halloween.jpg?raw=true" class="video-thumbnail">
+                    <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202314%20-%20Halloween.jpg?raw=true" alt="Halloween" class="video-thumbnail">
                 </a>
                 <div class="video-info">
                     <div class="video-title">Halloween</div>
@@ -607,7 +605,6 @@
                     </div>
                 </div>
             </div>
-         <!----------------------------------------------------- 2022 ----------------------------------------------------------->
          <!-- 202209 -->
             <div class="video-card" data-year="2022" style="display: none;">
                 <a href="https://youtu.be/GM2YPI6_1Q8&autoplay=1&rel=0&modestbranding=1" target="_blank">
@@ -725,8 +722,7 @@
                     </div>
                 </div>
             </div>
-          <!----------------------------------------------------- 2021 ----------------------------------------------------------->
-          <!-- 202102 -->
+           <!-- 202102 -->
             <div class="video-card" data-year="2021" style="display: none;">
                 <a href="https://youtu.be/dAS6aVZvWZw&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202102%20-%20100%20photos%20for%201%20year.jpg?raw=true" alt="100 Photos for 1 Year" class="video-thumbnail">
@@ -752,7 +748,6 @@
                     </div>
                 </div>
             </div>    
-           <!----------------------------------------------------- 2020 ----------------------------------------------------------->
           <!-- 202002 -->
             <div class="video-card" data-year="2020" style="display: none;">
                 <a href="https://youtu.be/fKU2ODS77HE&autoplay=1&rel=0&modestbranding=1" target="_blank">
@@ -779,7 +774,6 @@
                     </div>
                 </div>
             </div>
-          <!----------------------------------------------------- 2019 ----------------------------------------------------------->
          <!-- 201904 -->
             <div class="video-card" data-year="2019" style="display: none;">
                 <a href="https://youtu.be/HQl65Z1zaOE&autoplay=1&rel=0&modestbranding=1" target="_blank">
@@ -832,7 +826,6 @@
                     </div>
                 </div>
             </div>    
-               <!----------------------------------------------------- 2018 ----------------------------------------------------------->
          <!-- 201803 -->
             <div class="video-card" data-year="2018" style="display: none;">
                 <a href="https://youtu.be/go1ezfhDPko&autoplay=1&rel=0&modestbranding=1" target="_blank">
@@ -854,7 +847,7 @@
                      <div class="video-info">
                     <div class="video-title">France</div>
                     <div class="video-description">
-                        Discovery of Paris, Épehy, Amiens, Versailles, Cambrai, Gerberoy...
+                        Discovery of Paris, epehy, Amiens, Versailles, Cambrai, Gerberoy...
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
@@ -872,25 +865,20 @@
                     </div>
                 </div>
             </div>                              
-            <!-- Plus de cartes vidéo pour d'autres années -->
+            <!-- Plus de cartes video pour d'autres annees -->
         </div>          
-
-        
-
-        <!-- Mascotte à droite -->
+        <!-- Mascotte a droite -->
         <div class="mascot mascot-right">
             <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/RMascot.png?raw=true" alt="Mascot" class="mascot-img">
         </div>
-        <!-- Mascotte à gauche -->
+        <!-- Mascotte a gauche -->
         <div class="mascot mascot-left">
             <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/LMascot.png?raw=true" alt="Mascot" class="mascot-img">
         </div>
     </div>
-<!-- Plus de cartes vidéo pour d'autres années -->
-        </div>
-    <!-- Script JavaScript pour la gestion des années -->
+    <!-- Script JavaScript pour la gestion des annees -->
     <script>
-        // Sélectionne le bouton pour l'année 2024 et le marque comme sélectionné et cliqué par défaut
+        // Selectionne le bouton pour l'annee 2024 et le marque comme selectionne et clique par defaut
         const defaultYearButton = document.querySelector('.year-button[data-year="2024"]');
         defaultYearButton.classList.add('selected', 'clicked');
 
@@ -898,7 +886,7 @@
             const yearButtons = document.querySelectorAll('.year-button');
             const videoCards = document.querySelectorAll('.video-card');
 
-            // Fonction pour filtrer les vidéos par année
+            // Fonction pour filtrer les videos par annee
             function filterVideosByYear(year) {
                 videoCards.forEach(card => {
                     if (card.getAttribute('data-year') === year) {
@@ -909,24 +897,24 @@
                 });
             }
 
-            // Initialisation : sélectionner l'année 2024 par défaut
+            // Initialisation : selectionner l'annee 2024 par defaut
             const defaultYear = '2024';
             const defaultYearButton = document.querySelector(`.year-button[data-year="${defaultYear}"]`);
             defaultYearButton.classList.add('selected', 'clicked');
             filterVideosByYear(defaultYear);
 
-            // Écoute les clics sur les boutons d'année
+            // ecoute les clics sur les boutons d'annee
             yearButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     if (button.classList.contains('disabled')) return;
 
                     const selectedYear = button.getAttribute('data-year');
 
-                    // Mettre à jour le bouton sélectionné
+                    // Mettre a jour le bouton selectionne
                     yearButtons.forEach(btn => btn.classList.remove('selected', 'clicked'));
                     button.classList.add('selected', 'clicked');
 
-                    // Filtrer les vidéos
+                    // Filtrer les videos
                     filterVideosByYear(selectedYear);
                 });
             });
