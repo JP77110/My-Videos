@@ -103,6 +103,18 @@
                 color: white;
                 font-weight: bold;
             }
+                /* Styles pour assurer la réactivité */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em; /* Réduire la taille de la police sur les petits écrans */
+            }
+            .centered-title {
+                font-size: 20px; /* Réduire la taille de la police sur les petits écrans */
+            }
+            header {
+                padding: 15px; /* Réduire le padding sur les petits écrans */
+            }
+        }
         /* Styles pour la grille de vidéos */
         .video-grid {
             display: flex;
