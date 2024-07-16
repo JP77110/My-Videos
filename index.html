@@ -25,7 +25,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        } 
+        }
         /* Styles pour l'en-tete */
         header {
             background-color: #4CAF50;
@@ -46,12 +46,12 @@
             text-shadow: 3px 3px #45a049;
             margin: 0;
         }
-              /* Styles pour le titre centre */
+        /* Styles pour le titre centre */
         .centered-title {
             text-align: center;
             font-size: 24px;
             margin-top: 20px;
-         }
+        }
         /* Styles pour le sous-titre */
         .subtitle {
             font-family: 'Comic Sans MS', cursive; /* Police pour le subtitle */
@@ -103,14 +103,16 @@
                 color: white;
                 font-weight: bold;
             }
-                /* Styles pour assurer la reactivite */
+        /* Styles pour assurer la reactivite */
         @media (max-width: 600px) {
             h1 {
                 font-size: 2em; /* Reduire la taille de la police sur les petits ecrans */
             }
+
             .centered-title {
                 font-size: 20px; /* Reduire la taille de la police sur les petits ecrans */
             }
+
             header {
                 padding: 15px; /* Reduire le padding sur les petits ecrans */
             }
@@ -139,7 +141,7 @@
             .video-card:hover {
                 transform: scale(1.05) rotate(2deg);
                 box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
+            }
 
         /* Styles pour les miniatures video */
         .video-thumbnail {
@@ -193,6 +195,18 @@
             color: #888;
             margin-top: 5px;
         }
+        /* Styles year-badge */
+        .year-badge {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.7em;
+        }
         /* Styles pour la mascotte */
         .mascot {
             position: fixed;
@@ -219,26 +233,32 @@
                 transform: translateY(-20px);
             }
         }
-        
+
         /* Styles pour le bouton "Add Video" */
         .add-video {
-            background-color: #2ecc71;
+            background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 15px 30px;
             text-align: center;
             text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 20px 0;
+            display: flex; /* Utiliser flexbox */
+            justify-content: center; /* Centrer horizontalement */
+            align-items: center; /* Centrer verticalement */
+            font-size: 80px; /* Taille du texte ajustée */
+            font-weight: bold; /* Texte en gras */
             cursor: pointer;
-            border-radius: 25px;
+            border-radius: 50%; /* Pour faire un cercle */
+            width: 100px; /* Largeur et hauteur pour faire un cercle */
+            height: 100px;
             transition: background-color 0.3s, transform 0.3s;
+            position: fixed; /* Utiliser position fixe */
+            top: 20px; /* Placement en haut */
+            right: 20px; /* Placement à droite */
         }
             /* Styles au survol du bouton "Add Video" */
             .add-video:hover {
                 background-color: #27ae60;
-                transform: scale(1.05);
+                transform: scale(1.1);
             }
         /* Styles pour la fenetre modale */
         .modal {
@@ -304,7 +324,6 @@
                 background-color: #2980b9;
                 transform: scale(1.05);
             }
-
     </style>
 </head>
 <body>
@@ -327,8 +346,11 @@
             <button class="year-button" data-year="2016">2016</button>
             <button class="year-button" data-year="2015">2015</button>
             <button class="year-button" data-year="2014">2014</button>
-            <button class="year-button" data-year="2008">2008</button>
-       </div>
+            <button class="year-button" data-year="2008-2013">&lt;&lt;&lt;&lt;</button>
+        </div>
+
+        <!-- Bouton "Add Video" -->
+        <button class="add-video">+</button>
 
         <!-- Grille de videos -->
         <!-- 202404 -->
@@ -606,12 +628,12 @@
                     </div>
                 </div>
             </div>
-         <!-- 202209 -->
+            <!-- 202209 -->
             <div class="video-card" data-year="2022" style="display: none;">
                 <a href="https://youtu.be/GM2YPI6_1Q8&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202209%20-%20Others%20photos.jpg?raw=true" alt="Other Photos" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Other Photos</div>
                     <div class="video-description">
                         A potpourri of photographs.<br>
@@ -619,65 +641,65 @@
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>          
-         <!-- 202208 -->
+            </div>
+            <!-- 202208 -->
             <div class="video-card" data-year="2022" style="display: none;">
                 <a href="https://youtu.be/IGuWLZJiJvw&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202208%20-%20Tearna%20Anuban%203.jpg?raw=true" alt="Tearna Anuban 3" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Tearna Anuban 3</div>
                     <div class="video-description">
                         A bright and curious student, full of energy and joy.
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>          
-          <!-- 202207 -->
+            </div>
+            <!-- 202207 -->
             <div class="video-card" data-year="2022" style="display: none;">
                 <a href="https://youtu.be/c-EK4feBFbg&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202207%20-%20My%20two%20loves.jpg?raw=true" alt="My Two Loves" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">My Two Loves</div>
                     <div class="video-description">
                         Together, they complete my world.
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>          
-         <!-- 202206 -->
+            </div>
+            <!-- 202206 -->
             <div class="video-card" data-year="2022" style="display: none;">
                 <a href="https://youtu.be/-1oYDCdb1HI&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202206%20-%20My%20parents.jpg?raw=true" alt="My Parents" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">My Parents</div>
                     <div class="video-description">
                         A dedication to my parents, the pillars of my life.
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>          
-         <!-- 202205 -->
+            </div>
+            <!-- 202205 -->
             <div class="video-card" data-year="2022" style="display: none;">
                 <a href="https://youtu.be/thYZWhk9wh0&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202205%20-%20My%20love.jpg?raw=true" alt="My Love" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">My Love</div>
                     <div class="video-description">
                         My wife, the prettiest meeting of my life.
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>   
-         <!-- 202204 -->
+            </div>
+            <!-- 202204 -->
             <div class="video-card" data-year="2022" style="display: none;">
                 <a href="https://youtu.be/D3a7uQUTp-w&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202204%20-%20Tearna%20Sport's%20days.jpg?raw=true" alt="Tearna Sport's Days" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Tearna Sport's Days</div>
                     <div class="video-description">
                         Dive into Tearna Sport's Days: the joy of sportsmanship!
@@ -685,12 +707,12 @@
                     </div>
                 </div>
             </div>
-         <!-- 202203 -->
+            <!-- 202203 -->
             <div class="video-card" data-year="2022" style="display: none;">
                 <a href="https://youtu.be/1_hqLur8eG8&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202203%20-%20Halloween.jpg?raw=true" alt="Halloween" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Halloween</div>
                     <div class="video-description">
                         Enter the realm of fright and delight this Halloween!
@@ -698,12 +720,12 @@
                     </div>
                 </div>
             </div>
-         <!-- 202202 -->
+            <!-- 202202 -->
             <div class="video-card" data-year="2022" style="display: none;">
                 <a href="https://youtu.be/wYdTVUKcBo8&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202202%20-%20Mother's%20day.jpg?raw=true" alt="Mother's Day" class="video-thumbnail">
                 </a>
-                        <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Mother's Day</div>
                     <div class="video-description">
                         A tribute to my mother's love, and unwavering support.
@@ -711,7 +733,7 @@
                     </div>
                 </div>
             </div>
-         <!-- 202201 -->
+            <!-- 202201 -->
             <div class="video-card" data-year="2022" style="display: none;">
                 <a href="https://youtu.be/8QPzr1eHJec&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202201%20-%20Our%20cats.jpg?raw=true" alt="Our Cats" class="video-thumbnail">
@@ -724,7 +746,7 @@
                     </div>
                 </div>
             </div>
-           <!-- 202102 -->
+            <!-- 202102 -->
             <div class="video-card" data-year="2021" style="display: none;">
                 <a href="https://youtu.be/dAS6aVZvWZw&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202102%20-%20100%20photos%20for%201%20year.jpg?raw=true" alt="100 Photos For 1 Year" class="video-thumbnail">
@@ -736,7 +758,7 @@
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>           
+            </div>
             <!-- 202101 -->
             <div class="video-card" data-year="2021" style="display: none;">
                 <a href="https://youtu.be/pRqetQ0SbRs&autoplay=1&rel=0&modestbranding=1" target="_blank">
@@ -749,8 +771,8 @@
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>    
-          <!-- 202002 -->
+            </div>
+            <!-- 202002 -->
             <div class="video-card" data-year="2020" style="display: none;">
                 <a href="https://youtu.be/fKU2ODS77HE&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202002%20-%20202%20photos%20for%201%20year.jpg?raw=true" alt="202 Photos For 1 Year" class="video-thumbnail">
@@ -762,8 +784,8 @@
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>      
-           <!-- 202001 -->
+            </div>
+            <!-- 202001 -->
             <div class="video-card" data-year="2020" style="display: none;">
                 <a href="https://youtu.be/d2W0E5O8HF4&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202001%20-%20Tearna%20Anuban%201.jpg?raw=true" alt="Tearna Anuban 1" class="video-thumbnail">
@@ -776,64 +798,64 @@
                     </div>
                 </div>
             </div>
-         <!-- 201904 -->
+            <!-- 201904 -->
             <div class="video-card" data-year="2019" style="display: none;">
                 <a href="https://youtu.be/HQl65Z1zaOE&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201904%20-%20Photo%20jumble.jpg?raw=true" alt="Photos Jumble" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Photos Jumble</div>
                     <div class="video-description">
                         A vibrant collection of joyful moments.
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>          
-          <!-- 201903 -->
+            </div>
+            <!-- 201903 -->
             <div class="video-card" data-year="2019" style="display: none;">
                 <a href="https://youtu.be/FPU6rAy9ZQ4&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201903%20-%20Wedding%20day%20Tear%20&%20JP.jpg?raw=true" alt="Wedding Day Tear & JP" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Wedding Day Tear & JP</div>
                     <div class="video-description">
                         A celebration of a lifelong journey together.
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>          
-          <!-- 201902 -->
+            </div>
+            <!-- 201902 -->
             <div class="video-card" data-year="2019" style="display: none;">
                 <a href="https://youtu.be/owK96NsNNZo&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201902%20-%20Tearna%20in%20kindergarden.jpg?raw=true" alt="Tearna In Kindergarden" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Tearna In Kindergarden</div>
                     <div class="video-description">
                         Exploring and growing in early education.
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>          
-          <!-- 201901 -->
+            </div>
+            <!-- 201901 -->
             <div class="video-card" data-year="2019" style="display: none;">
                 <a href="https://youtu.be/5unGqcuUxk4&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201901%20-%20Wedding%20Dave%20&%20Noy.jpg?raw=true" alt="Wedding Dave & Noy" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Wedding Dave & Noy</div>
                     <div class="video-description">
                         Cherished moments of togetherness!
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>    
-         <!-- 201803 -->
+            </div>
+            <!-- 201803 -->
             <div class="video-card" data-year="2018" style="display: none;">
                 <a href="https://youtu.be/go1ezfhDPko&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201803%20-%20An%20overview%20of%202018.jpg?raw=true" alt="An Overview Of 2018" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">An Overview Of 2018</div>
                     <div class="video-description">
                         Highlights and key moments.<br>
@@ -841,50 +863,50 @@
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>  
-         <!-- 201802 -->
+            </div>
+            <!-- 201802 -->
             <div class="video-card" data-year="2018" style="display: none;">
                 <a href="https://youtu.be/8SUexwiAkLE&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201802%20-%20France.jpg?raw=true" alt="France" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">France</div>
                     <div class="video-description">
                         Discovery of Paris, Epehy, Amiens, Cambrai, Gerberoy...
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>      
-         <!-- 201801 -->
+            </div>
+            <!-- 201801 -->
             <div class="video-card" data-year="2018" style="display: none;">
                 <a href="https://youtu.be/WyJJTEi2tB4&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201801%20-%20Tearna%20-%201st%20Songkran.jpg?raw=true" alt="Tearna - 1st Songkran" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Tearna - 1st Songkran</div>
                     <div class="video-description">
                         First time experiencing the water festival!
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="video-card" data-year="2017" style="display: none;">
                 <a href="https://youtu.be/SOM6pPIt6r4&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201702%20-%20Tearna%20is%201%20year%20old.jpg?raw=true" alt="Tearna Is 1 Year Old" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Tearna Is 1 Year Old</div>
                     <div class="video-description">
                         One year, countless treasured memories!
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>       
-  <div class="video-card" data-year="2017" style="display: none;">
+            </div>
+            <div class="video-card" data-year="2017" style="display: none;">
                 <a href="https://youtu.be/rFoazToFS5k&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201701%20-%20Tearna%20is%20doing%20her%20show.jpg?raw=true" alt="Tearna Is Doing Her Show" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Tearna Is Doing Her Show</div>
                     <div class="video-description">
                         A little star shining brightly!<br>
@@ -892,12 +914,12 @@
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>  
-  <div class="video-card" data-year="2016" style="display: none;">
+            </div>
+            <div class="video-card" data-year="2016" style="display: none;">
                 <a href="https://youtu.be/jkRbhamOBcY&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201602%20-%20Tearna%20is%201%20month%20old.jpg?raw=true" alt="Tearna Is 1 Month Old" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Tearna Is 1 Month Old</div>
                     <div class="video-description">
                         Precious First Month Moments!<br>
@@ -905,60 +927,60 @@
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>   
-  <div class="video-card" data-year="2016" style="display: none;">
+            </div>
+            <div class="video-card" data-year="2016" style="display: none;">
                 <a href="https://youtu.be/DAb6gOS7MDA&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201601%20-%20Tearna's%20conception.jpg?raw=true" alt="Tearna's conception" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Tearna's conception</div>
                     <div class="video-description">
                         The first steps of a new journey!
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div> 
-  <div class="video-card" data-year="2015" style="display: none;">
+            </div>
+            <div class="video-card" data-year="2015" style="display: none;">
                 <a href="https://youtu.be/7z5u4FyBpbU&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201503%20-%20One%20year%20of%20love.jpg?raw=true" alt="One Year Of Love" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">One Year Of Love</div>
                     <div class="video-description">
                         Our first year together has been nothing short of amazing.
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>     
-  <div class="video-card" data-year="2015" style="display: none;">
+            </div>
+            <div class="video-card" data-year="2015" style="display: none;">
                 <a href="https://youtu.be/yGEpI4HJNlo&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201502%20-%20Tear's%20birthday.jpg?raw=true" alt="Tear's Birthday" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Tear's Birthday</div>
                     <div class="video-description">
                         On this day, I want you to know how much you mean to me.
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>    
-  <div class="video-card" data-year="2015" style="display: none;">
+            </div>
+            <div class="video-card" data-year="2015" style="display: none;">
                 <a href="https://youtu.be/s7gLtB7Xarg&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201501%20-%20The%20sunshine%20of%20my%20life.jpg?raw=true" alt="The Sunshine Of My Life" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">The Sunshine Of My Life</div>
                     <div class="video-description">
                         With you, every day feels like a sunny day.
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>    
-  <div class="video-card" data-year="2014" style="display: none;">
+            </div>
+            <div class="video-card" data-year="2014" style="display: none;">
                 <a href="https://youtu.be/oKykQOJXI7A&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201402%20-%20You%20&%20I.jpg?raw=true" alt="You & I" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">You & I</div>
                     <div class="video-description">
                         You & I : Forever And A Day.<br>
@@ -966,12 +988,12 @@
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>  
-  <div class="video-card" data-year="2014" style="display: none;">
+            </div>
+            <div class="video-card" data-year="2014" style="display: none;">
                 <a href="https://youtu.be/bIXyIrB4fkQ&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201401%20-%20Me%20in%20Hua%20Hin.jpg?raw=true" alt="Me In Hua Hin" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Me In Hua Hin</div>
                     <div class="video-description">
                         Exploring Hua Hin, from its beaches to markets.
@@ -987,20 +1009,20 @@
 
 
 
-  <div class="video-card" data-year="2008" style="display: none;">
+            <div class="video-card" data-year="2008" style="display: none;">
                 <a href="https://youtu.be/UmtDt7_3XFg&autoplay=1&rel=0&modestbranding=1" target="_blank">
                     <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/2008%20-%20Me%20in%20China.jpg?raw=true" alt="Me In China" class="video-thumbnail">
                 </a>
-                     <div class="video-info">
+                <div class="video-info">
                     <div class="video-title">Me In China</div>
                     <div class="video-description">
                         Embark on this adventure with me!
                         <div class="centered-squares">&#9633;&#9633;&#9633;</div>
                     </div>
                 </div>
-            </div>     
-   <!-- Plus de cartes video pour d'autres annees -->
-        </div>          
+            </div>
+            <!-- Plus de cartes video pour d'autres annees -->
+        </div>
         <!-- Mascotte a droite -->
         <div class="mascot mascot-right">
             <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/RMascot.png?raw=true" alt="Mascot" class="mascot-img">
@@ -1012,6 +1034,19 @@
     </div>
     <!-- Script JavaScript pour la gestion des annees -->
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var videoCards = document.querySelectorAll('.video-card');
+
+            videoCards.forEach(function (card) {
+                var year = parseInt(card.getAttribute('data-year'));
+                if (year >= 2008 && year <= 2012) {
+                    var yearBadge = document.createElement('div');
+                    yearBadge.classList.add('year-badge');
+                    yearBadge.textContent = year;
+                    card.appendChild(yearBadge);
+                }
+            });
+        });
         // Selectionne le bouton pour l'annee 2024 et le marque comme selectionne et clique par defaut
         const defaultYearButton = document.querySelector('.year-button[data-year="2024"]');
         defaultYearButton.classList.add('selected', 'clicked');
@@ -1023,10 +1058,19 @@
             // Fonction pour filtrer les videos par annee
             function filterVideosByYear(year) {
                 videoCards.forEach(card => {
-                    if (card.getAttribute('data-year') === year) {
-                        card.style.display = 'block';
+                    const cardYear = card.getAttribute('data-year');
+                    if (year === '2008-2013') {
+                        if (cardYear >= 2008 && cardYear <= 2013) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
                     } else {
-                        card.style.display = 'none';
+                        if (cardYear === year) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
                     }
                 });
             }
