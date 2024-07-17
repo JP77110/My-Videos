@@ -679,7 +679,7 @@
                         imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201303%20-%20Me%20in%20Indonesia.jpg?raw=true",
                         title: "Me In Indonesia",
                         description: "Exploring Bali was a delightful adventure.",
-                    },                    
+                    },
                     {
                         year: 2012,
                         link: "https://youtu.be/RUM3tdlDzxE&autoplay=1&rel=0&modestbranding=1",
@@ -725,17 +725,17 @@
                     videoCard.setAttribute("data-year", video.year);
 
                     videoCard.innerHTML = `
-                                                    <a href="${video.link}" target="_blank">
-                                                        <img src="${video.imgSrc}" alt="${video.title}" class="video-thumbnail">
-                                                    </a>
-                                                    <div class="video-info">
-                                                        <div class="video-title">${video.title}</div>
-                                                        <div class="video-description">
-                                                            ${video.description}
-                                                            <div class="centered-squares">&#9633;&#9633;&#9633;</div>
-                                                        </div>
-                                                    </div>
-                                                `;
+                                                            <a href="${video.link}" target="_blank">
+                                                                <img src="${video.imgSrc}" alt="${video.title}" class="video-thumbnail">
+                                                            </a>
+                                                            <div class="video-info">
+                                                                <div class="video-title">${video.title}</div>
+                                                                <div class="video-description">
+                                                                    ${video.description}
+                                                                    <div class="centered-squares">&#9633;&#9633;&#9633;</div>
+                                                                </div>
+                                                            </div>
+                                                        `;
 
                     videoGrid.appendChild(videoCard);
                 });
