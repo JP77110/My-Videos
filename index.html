@@ -676,7 +676,7 @@
                     {
                         year: 2013,
                         link: "https://youtu.be/ofYULPcomRY&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201303%20-%20Me%20in%20Indonesia.jpg?raw=true",
+                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201302%20-%20Me%20in%20Indonesia.jpg?raw=true",
                         title: "Me In Indonesia",
                         description: "Exploring Bali was a delightful adventure.",
                     },
@@ -723,33 +723,27 @@
                         description: "Embark on this adventure with me!",
                     }
                 ];
-
                 const videoGrid = document.getElementById("videoGrid");
-
                 videos.forEach(video => {
                     const videoCard = document.createElement("div");
                     videoCard.classList.add("video-card");
                     videoCard.setAttribute("data-year", video.year);
-
                     videoCard.innerHTML = `
-                                                            <a href="${video.link}" target="_blank">
-                                                                <img src="${video.imgSrc}" alt="${video.title}" class="video-thumbnail">
-                                                            </a>
-                                                            <div class="video-info">
-                                                                <div class="video-title">${video.title}</div>
-                                                                <div class="video-description">
-                                                                    ${video.description}
-                                                                    <div class="centered-squares">&#9633;&#9633;&#9633;</div>
-                                                                </div>
-                                                            </div>
-                                                        `;
-
+                    <a href="${video.link}" target="_blank">
+                        <img src="${video.imgSrc}" alt="${video.title}" class="video-thumbnail">
+                    </a>
+                    <div class="video-info">
+                        <div class="video-title">${video.title}</div>
+                        <div class="video-description">
+                            ${video.description}
+                            <div class="centered-squares">&#9633;&#9633;&#9633;</div>
+                        </div>
+                    </div>
+                `;
                     videoGrid.appendChild(videoCard);
                 });
             });
         </script>
-
-
         <!-- Mascotte a droite -->
         <div class="mascot mascot-right">
             <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/RMascot.png?raw=true" alt="Mascot" class="mascot-img">
@@ -759,40 +753,30 @@
             <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/LMascot.png?raw=true" alt="Mascot" class="mascot-img">
         </div>
     </div>
-    <!-- Script JavaScript pour la gestion des annees -->
+    <!-- Script JavaScript pour la gestion des années -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var closePageButton = document.querySelector('.close-page');
-
+            var yearButtons = document.querySelectorAll('.year-button');
+            var videoCards = document.querySelectorAll('.video-card');
+            // Gestion du bouton de fermeture de la page
             closePageButton.addEventListener('click', function () {
                 window.close();
             });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            var videoCards = document.querySelectorAll('.video-card');
-
+            // Ajouter des badges d'année pour les vidéos entre 2008 et 2013
             videoCards.forEach(function (card) {
                 var year = parseInt(card.getAttribute('data-year'));
-                if (year >= 2008 && year <= 2012) {
+                if (year >= 2008 && year <= 2013) {
                     var yearBadge = document.createElement('div');
                     yearBadge.classList.add('year-badge');
                     yearBadge.textContent = year;
                     card.appendChild(yearBadge);
                 }
             });
-        });
-        // Selectionne le bouton pour l'annee 2024 et le marque comme selectionne et clique par defaut
-        const defaultYearButton = document.querySelector('.year-button[data-year="2024"]');
-        defaultYearButton.classList.add('selected', 'clicked');
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const yearButtons = document.querySelectorAll('.year-button');
-            const videoCards = document.querySelectorAll('.video-card');
-
-            // Fonction pour filtrer les videos par annee
+            // Fonction pour filtrer les vidéos par année
             function filterVideosByYear(year) {
                 videoCards.forEach(card => {
-                    const cardYear = card.getAttribute('data-year');
+                    const cardYear = parseInt(card.getAttribute('data-year'));
                     if (year === '2008-2013') {
                         if (cardYear >= 2008 && cardYear <= 2013) {
                             card.style.display = 'block';
@@ -800,7 +784,7 @@
                             card.style.display = 'none';
                         }
                     } else {
-                        if (cardYear === year) {
+                        if (cardYear === parseInt(year)) {
                             card.style.display = 'block';
                         } else {
                             card.style.display = 'none';
@@ -808,25 +792,21 @@
                     }
                 });
             }
-
-            // Initialisation : selectionner l'annee 2024 par defaut
+            // Sélectionne le bouton pour l'année 2024 et le marque comme sélectionné et cliqué par défaut
             const defaultYear = '2024';
             const defaultYearButton = document.querySelector(`.year-button[data-year="${defaultYear}"]`);
             defaultYearButton.classList.add('selected', 'clicked');
             filterVideosByYear(defaultYear);
 
-            // ecoute les clics sur les boutons d'annee
+            // Écoute les clics sur les boutons d'année
             yearButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     if (button.classList.contains('disabled')) return;
-
                     const selectedYear = button.getAttribute('data-year');
-
-                    // Mettre a jour le bouton selectionne
+                    // Mettre à jour le bouton sélectionné
                     yearButtons.forEach(btn => btn.classList.remove('selected', 'clicked'));
                     button.classList.add('selected', 'clicked');
-
-                    // Filtrer les videos
+                    // Filtrer les vidéos
                     filterVideosByYear(selectedYear);
                 });
             });
