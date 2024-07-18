@@ -236,28 +236,30 @@
 
 
         /* Styles pour le bouton "Fermer la Page" */
+        /* Styles pour le bouton "Fermer la Page" */
         .close-page {
-            background-color: #e74c3c;
+            background-color: #c0392b; /* Rouge sombre */
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 15px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
+            font-size: 14px;
+            font-weight: bold;
             margin: 20px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 5px; /* Coins arrondis */
             transition: background-color 0.3s, transform 0.3s;
             position: fixed; /* Fixer la position du bouton */
             top: 0px; /* Placement en haut */
-            right: 20px; /* Placement à droite */
+            right: 0px; /* Placement à droite */
         }
 
             .close-page:hover {
-                background-color: #c0392b;
-                transform: scale(1.05);
-                color: black;
+                background-color: #a93226; /* Rouge plus foncé au survol */
+                transform: scale(1.1); /* Légère agrandissement au survol */
+                color: white;
                 text-decoration: none;
                 cursor: pointer;
             }
@@ -291,7 +293,7 @@
             <!-- Cet élément contiendra les cartes vidéo dynamiquement ajoutées -->
         </div>
         <!-- Bouton "fermeture" -->
-        <button class="close-page">CLOSE</button>
+        <button class="close-page">X</button>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const videos = [
@@ -729,17 +731,17 @@
                     videoCard.classList.add("video-card");
                     videoCard.setAttribute("data-year", video.year);
                     videoCard.innerHTML = `
-                    <a href="${video.link}" target="_blank">
-                        <img src="${video.imgSrc}" alt="${video.title}" class="video-thumbnail">
-                    </a>
-                    <div class="video-info">
-                        <div class="video-title">${video.title}</div>
-                        <div class="video-description">
-                            ${video.description}
-                            <div class="centered-squares">&#9633;&#9633;&#9633;</div>
-                        </div>
-                    </div>
-                `;
+                            <a href="${video.link}" target="_blank">
+                                <img src="${video.imgSrc}" alt="${video.title}" class="video-thumbnail">
+                            </a>
+                            <div class="video-info">
+                                <div class="video-title">${video.title}</div>
+                                <div class="video-description">
+                                    ${video.description}
+                                    <div class="centered-squares">&#9633;&#9633;&#9633;</div>
+                                </div>
+                            </div>
+                        `;
                     videoGrid.appendChild(videoCard);
                 });
             });
