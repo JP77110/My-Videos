@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tear, JP & Tearna&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</title>
     <style>
+ 
         /* Styles pour le corps de la page */
         body {
             font-family: 'Open Sans', Arial, sans-serif; /* Utiliser Open Sans avec une police de secours */
@@ -33,10 +34,11 @@
             text-align: center;
             border-radius: 0 0 50% 50%;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
         }
         /* Styles pour le titre principal */
         h1 {
-            font-family: 'Comic Sans MS', cursive; /* Police pour les titres principaux */
+            font-family: 'Comic Sans MS', cursive;
             font-weight: bold;
             font-size: 1.4em;
             color: #2ecc71;
@@ -45,6 +47,7 @@
             font-size: 3em;
             text-shadow: 3px 3px #45a049;
             margin: 0;
+            position: relative;
         }
         /* Styles pour le titre centre */
         .centered-title {
@@ -234,11 +237,9 @@
             }
         }
 
-
-        /* Styles pour le bouton "Fermer la Page" */
         /* Styles pour le bouton "Fermer la Page" */
         .close-page {
-            background-color: #c0392b; /* Rouge sombre */
+            background-color: #c0392b; 
             color: white;
             border: none;
             padding: 10px 15px;
@@ -263,6 +264,13 @@
                 text-decoration: none;
                 cursor: pointer;
             }
+        /* Styles pour le logo */
+        .logo {
+            position: absolute; /* Position absolue pour le logo */
+            top: 10px; /* Ajustez cette valeur pour le positionnement vertical */
+            width: 126px; /* Ajustez cette valeur pour la taille du logo */
+            height: 80px; /* Ajustez cette valeur pour la taille du logo */
+        }
     </style>
 </head>
 <body>
@@ -270,6 +278,7 @@
         <header>
             <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tear, JP & Tearna&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
             <div class="subtitle">Awesome Adventures!</div>
+            <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/logo.png?raw=true" alt="Logo" class="logo">
         </header>
 
 
@@ -758,6 +767,10 @@
     <!-- Script JavaScript pour la gestion des années -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            var logo = document.querySelector('.logo');
+            var title = document.querySelector('h1');
+            var titlePosition = title.getBoundingClientRect();
+            logo.style.left = (titlePosition.left - logo.offsetWidth - 550) + 'px';
             var closePageButton = document.querySelector('.close-page');
             var yearButtons = document.querySelectorAll('.year-button');
             var videoCards = document.querySelectorAll('.video-card');
