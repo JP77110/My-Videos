@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tear, JP & Tearna&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</title>
     <style>
- 
         /* Styles pour le corps de la page */
         body {
             font-family: 'Open Sans', Arial, sans-serif; /* Utiliser Open Sans avec une police de secours */
@@ -239,7 +238,7 @@
 
         /* Styles pour le bouton "Fermer la Page" */
         .close-page {
-            background-color: #c0392b; 
+            background-color: #c0392b;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -254,22 +253,40 @@
             transition: background-color 0.3s, transform 0.3s;
             position: fixed; /* Fixer la position du bouton */
             top: 0px; /* Placement en haut */
-            right: 0px; /* Placement à droite */
+            right: 0px; /* Placement à```html
         }
 
             .close-page:hover {
                 background-color: #a93226; /* Rouge plus foncé au survol */
-                transform: scale(1.1); /* Légère agrandissement au survol */
-                color: white;
-                text-decoration: none;
-                cursor: pointer;
-            }
+            transform: scale(1.1); /* Légère agrandissement au survol */
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
         /* Styles pour le logo */
         .logo {
             position: absolute; /* Position absolue pour le logo */
             top: 10px; /* Ajustez cette valeur pour le positionnement vertical */
             width: 126px; /* Ajustez cette valeur pour la taille du logo */
-            height: 80px; /* Ajustez cette valeur pour la taille du logo */
+            height: auto; /* Maintenir le ratio d'aspect */
+        }
+
+        @media (max-width: 1200px) {
+            .logo {
+                width: 100px; /* Ajustez cette valeur pour la taille du logo sur les écrans moyens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                width: 80px; /* Ajustez cette valeur pour la taille du logo sur les petits écrans */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 60px; /* Ajustez cette valeur pour la taille du logo sur les très petits écrans */
+            }
         }
     </style>
 </head>
@@ -740,17 +757,17 @@
                     videoCard.classList.add("video-card");
                     videoCard.setAttribute("data-year", video.year);
                     videoCard.innerHTML = `
-                            <a href="${video.link}" target="_blank">
-                                <img src="${video.imgSrc}" alt="${video.title}" class="video-thumbnail">
-                            </a>
-                            <div class="video-info">
-                                <div class="video-title">${video.title}</div>
-                                <div class="video-description">
-                                    ${video.description}
-                                    <div class="centered-squares">&#9633;&#9633;&#9633;</div>
-                                </div>
-                            </div>
-                        `;
+                                    <a href="${video.link}" target="_blank">
+                                        <img src="${video.imgSrc}" alt="${video.title}" class="video-thumbnail">
+                                    </a>
+                                    <div class="video-info">
+                                        <div class="video-title">${video.title}</div>
+                                        <div class="video-description">
+                                            ${video.description}
+                                            <div class="centered-squares">&#9633;&#9633;&#9633;</div>
+                                        </div>
+                                    </div>
+                                `;
                     videoGrid.appendChild(videoCard);
                 });
             });
