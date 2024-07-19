@@ -105,20 +105,45 @@
                 color: white;
                 font-weight: bold;
             }
-        /* Styles pour assurer la reactivite */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em; /* Reduire la taille de la police sur les petits ecrans */
-            }
+/* Styles pour assurer la réactivité */
+@media (max-width: 1200px) {
+    .logo {
+        width: 100px; /* Ajuster cette valeur pour la taille du logo sur les écrans moyens */
+        top: 8px; /* Ajuster cette valeur pour le positionnement vertical sur les écrans moyens */
+        right: 8px; /* Ajuster cette valeur pour le positionnement horizontal sur les écrans moyens */
+    }
+}
 
-            .centered-title {
-                font-size: 20px; /* Reduire la taille de la police sur les petits ecrans */
-            }
+@media (max-width: 768px) {
+    .logo {
+        width: 80px; /* Ajuster cette valeur pour la taille du logo sur les petits écrans */
+        top: 6px; /* Ajuster cette valeur pour le positionnement vertical sur les petits écrans */
+        right: 6px; /* Ajuster cette valeur pour le positionnement horizontal sur les petits écrans */
+    }
+}
 
-            header {
-                padding: 15px; /* Reduire le padding sur les petits ecrans */
-            }
-        }
+@media (max-width: 480px) {
+    .logo {
+        width: 60px; /* Ajuster cette valeur pour la taille du logo sur les très petits écrans */
+        top: 4px; /* Ajuster cette valeur pour le positionnement vertical sur les très petits écrans */
+        right: 4px; /* Ajuster cette valeur pour le positionnement horizontal sur les très petits écrans */
+    }
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Réduire la taille de la police sur les petits écrans */
+    }
+
+    .centered-title {
+        font-size: 20px; /* Réduire la taille de la police sur les petits écrans */
+    }
+
+    header {
+        padding: 15px; /* Réduire le padding sur les petits écrans */
+    }
+}
         /* Styles pour la grille de videos */
         .video-grid {
             display: flex;
