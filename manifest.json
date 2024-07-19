@@ -2,7 +2,7 @@
   "name": "Tear, JP & Tearna's Awesome Adventures",
   "short_name": "Adventures",
   "start_url": "/My-videos/",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "description": "A collection of videos of Tear, JP, and Tearna's adventures",
