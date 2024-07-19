@@ -297,7 +297,17 @@
             <div class="subtitle">Awesome Adventures!</div>
             <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/logo.png?raw=true" alt="Logo" class="logo">
         </header>
-
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js').then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        }).catch((error) => {
+          console.log('Service Worker registration failed:', error);
+        });
+      });
+    }
+  </script>
 
         <!-- Selecteur d'annees -->
         <div class="year-selector">
