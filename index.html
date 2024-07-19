@@ -105,48 +105,20 @@
                 color: white;
                 font-weight: bold;
             }
-/* Styles pour assurer la réactivité */
-@media (max-width: 1200px) {
-    .logo {
-        width: 100px; /* Ajuster cette valeur pour la taille du logo sur les écrans moyens */
-        top: 8px; /* Ajuster cette valeur pour le positionnement vertical sur les écrans moyens */
-        right: 8px; /* Ajuster cette valeur pour le positionnement horizontal sur les écrans moyens */
-        max-width: 80px; /* Taille maximale sur les écrans moyens */
-    }
-}
+        /* Styles pour assurer la reactivite */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em; /* Reduire la taille de la police sur les petits ecrans */
+            }
 
-@media (max-width: 768px) {
-    .logo {
-        width: 80px; /* Ajuster cette valeur pour la taille du logo sur les petits écrans */
-        top: 6px; /* Ajuster cette valeur pour le positionnement vertical sur les petits écrans */
-        right: 6px; /* Ajuster cette valeur pour le positionnement horizontal sur les petits écrans */
-        max-width: 60px; /* Taille maximale sur les petits écrans */
-    }
-}
+            .centered-title {
+                font-size: 20px; /* Reduire la taille de la police sur les petits ecrans */
+            }
 
-@media (max-width: 480px) {
-    .logo {
-        width: 60px; /* Ajuster cette valeur pour la taille du logo sur les très petits écrans */
-        top: 4px; /* Ajuster cette valeur pour le positionnement vertical sur les très petits écrans */
-        right: 4px; /* Ajuster cette valeur pour le positionnement horizontal sur les très petits écrans */
-        max-width: 40px; /* Taille maximale sur les très petits écrans */
-    }
-}
-
-/* Styles pour les petits écrans */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em; /* Réduire la taille de la police sur les petits écrans */
-    }
-
-    .centered-title {
-        font-size: 20px; /* Réduire la taille de la police sur les petits écrans */
-    }
-
-    header {
-        padding: 15px; /* Réduire le padding sur les petits écrans */
-    }
-}
+            header {
+                padding: 15px; /* Reduire le padding sur les petits ecrans */
+            }
+        }
         /* Styles pour la grille de videos */
         .video-grid {
             display: flex;
@@ -293,11 +265,10 @@
         }
         /* Styles pour le logo */
         .logo {
-            position: relative; /* Position absolue pour le logo */
+            position: absolute; /* Position absolue pour le logo */
             top: 10px; /* Ajustez cette valeur pour le positionnement vertical */
-            width: 550px; /* Ajustez cette valeur pour la taille du logo */
+            width: 126px; /* Ajustez cette valeur pour la taille du logo */
             height: auto; /* Maintenir le ratio d'aspect */
-            margin: 0 auto;
         }
 
         @media (max-width: 1200px) {
@@ -326,17 +297,7 @@
             <div class="subtitle">Awesome Adventures!</div>
             <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/logo.png?raw=true" alt="Logo" class="logo">
         </header>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js').then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        }).catch((error) => {
-          console.log('Service Worker registration failed:', error);
-        });
-      });
-    }
-  </script>
+
 
         <!-- Selecteur d'annees -->
         <div class="year-selector">
@@ -359,6 +320,18 @@
         </div>
         <!-- Bouton "fermeture" -->
         <button class="close-page">X</button>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('service-worker.js').then((registration) => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    }).catch((error) => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+                });
+            }
+        </script>
+
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const videos = [
@@ -796,17 +769,17 @@
                     videoCard.classList.add("video-card");
                     videoCard.setAttribute("data-year", video.year);
                     videoCard.innerHTML = `
-                                    <a href="${video.link}" target="_blank">
-                                        <img src="${video.imgSrc}" alt="${video.title}" class="video-thumbnail">
-                                    </a>
-                                    <div class="video-info">
-                                        <div class="video-title">${video.title}</div>
-                                        <div class="video-description">
-                                            ${video.description}
-                                            <div class="centered-squares">&#9633;&#9633;&#9633;</div>
-                                        </div>
-                                    </div>
-                                `;
+                                            <a href="${video.link}" target="_blank">
+                                                <img src="${video.imgSrc}" alt="${video.title}" class="video-thumbnail">
+                                            </a>
+                                            <div class="video-info">
+                                                <div class="video-title">${video.title}</div>
+                                                <div class="video-description">
+                                                    ${video.description}
+                                                    <div class="centered-squares">&#9633;&#9633;&#9633;</div>
+                                                </div>
+                                            </div>
+                                        `;
                     videoGrid.appendChild(videoCard);
                 });
             });
