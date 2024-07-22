@@ -3,73 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tear, JP & Tearna&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</title>
+    <title>Tear, JP & Tearna</title>
     <style>
         /* Styles pour le corps de la page */
         body {
-            font-family: 'Open Sans', Arial, sans-serif; /* Utiliser Open Sans avec une police de secours */
-            background-color: #ffd700;
+            font-family: 'Nunito', 'Segoe UI', sans-serif;
+            background: linear-gradient(45deg, #FFD1DC, #FF9A8B, #91EAE4, #86A8E7);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             color: #333;
-            position: relative;
-            overflow-x: hidden;
-        }
-        /* Styles pour le conteneur principal */
-        .container {
-            max-width: 1500px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 1;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
-        /* Styles pour l'en-tete */
-        header {
-            background-color: #4CAF50;
-            padding: 20px;
-            text-align: center;
-            border-radius: 0 0 50% 50%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            position: relative;
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
-        /* Styles pour le titre principal */
-        h1 {
-            font-family: 'Comic Sans MS', cursive;
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: none; /* Supprime l'arrière-plan pour rendre le logo transparent */
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
             font-weight: bold;
-            font-size: 1.4em;
-            color: #2ecc71;
-            margin: 20px 0;
-            color: #fff;
-            font-size: 3em;
-            text-shadow: 3px 3px #45a049;
-            margin: 0;
-            position: relative;
+            color: #FFF;
+            transition: transform 0.3s ease;
+            margin: 0 20px; /* Ajustez cette valeur pour espacer les logos du titre */
         }
-        /* Styles pour le titre centre */
-        .centered-title {
+
+            .logo:hover {
+                transform: rotate(10deg) scale(1.05);
+            }
+        .title-container {
             text-align: center;
-            font-size: 24px;
-            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
         }
-        /* Styles pour le sous-titre */
-        .subtitle {
-            font-family: 'Comic Sans MS', cursive; /* Police pour le subtitle */
-            color: #fff;
-            font-size: 1.2em;
-            margin-top: 10px;
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient( to bottom right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100% );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
         }
-        /* Styles pour le selecteur d'annees */
+
+        @keyframes shine {
+            0% {
+                top: -50%;
+                left: -50%;
+            }
+
+            100% {
+                top: 150%;
+                left: 150%;
+            }
+        }
+
+
+        h1 {
+            color: #444;
+            font-size: 2.8em;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #666;
+            font-size: 1.6em;
+            margin: 5px 0 0;
+            font-weight: 400;
+        }
+
+        /* Styles pour le sélecteur d'années */
         .year-selector {
             text-align: center;
-            margin: 20px 0;
+            margin: 10px 0;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
-        /* Styles pour les boutons d'annee */
+
+        /* Styles pour les boutons d'année */
         .year-button {
             background-color: #3498db;
             border: none;
@@ -84,51 +132,58 @@
             border-radius: 25px;
             transition: background-color 0.3s, transform 0.3s;
         }
-            /* Styles au survol des boutons d'annee */
+
+            /* Styles au survol des boutons d'année */
             .year-button:hover:not(.disabled) {
                 background-color: #2980b9;
                 transform: scale(1.1);
             }
-            /* Styles pour les boutons d'annee actifs */
+
+            /* Styles pour les boutons d'année actifs */
             .year-button.active {
                 background-color: #e67e22;
             }
-            /* Styles pour les boutons d'annee selectionnes */
+
+            /* Styles pour les boutons d'année sélectionnés */
             .year-button.selected {
-                background-color: #9b59b6;
+                background-color: #005c99;
                 color: white;
                 font-weight: bold;
             }
-            /* Styles pour les boutons d'annee cliques */
+
+            /* Styles pour les boutons d'année cliqués */
             .year-button.clicked {
-                background-color: #9b59b6;
+                background-color: #005c99;
                 color: white;
                 font-weight: bold;
             }
-        /* Styles pour assurer la reactivite */
+
+        /* Styles pour assurer la réactivité */
         @media (max-width: 600px) {
             h1 {
-                font-size: 2em; /* Reduire la taille de la police sur les petits ecrans */
+                font-size: 2em; /* Réduire la taille de la police sur les petits écrans */
             }
 
             .centered-title {
-                font-size: 20px; /* Reduire la taille de la police sur les petits ecrans */
+                font-size: 20px; /* Réduire la taille de la police sur les petits écrans */
             }
 
             header {
-                padding: 15px; /* Reduire le padding sur les petits ecrans */
+                padding: 15px; /* Réduire le padding sur les petits écrans */
             }
         }
-        /* Styles pour la grille de videos */
+
+        /* Styles pour la grille de vidéos */
         .video-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px; /* Reduire l'espace entre les cartes */
+            gap: 10px; /* Réduire l'espace entre les cartes */
             max-width: 2000px; /* Augmenter la largeur maximale de la grille */
+            margin-top: 10px; /* Réduisez la marge pour rapprocher les miniatures */
         }
 
-        /* Styles pour les cartes video */
+        /* Styles pour les cartes vidéo */
         .video-card {
             background-color: #fff;
             border-radius: 15px;
@@ -136,60 +191,61 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-            width: 200px; /* Garder la largeur des cartes video */
-            margin: 5px; /* Reduire la marge pour permettre plus de cartes par ligne */
+            width: 200px; /* Garder la largeur des cartes vidéo */
+            margin: 5px; /* Réduire la marge pour permettre plus de cartes par ligne */
         }
-            /* Styles au survol des cartes video */
+
+            /* Styles au survol des cartes vidéo */
             .video-card:hover {
                 transform: scale(1.05) rotate(2deg);
                 box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             }
 
-        /* Styles pour les miniatures video */
+        /* Styles pour les miniatures vidéo */
         .video-thumbnail {
             width: 100%;
             height: 120px;
             object-fit: cover;
         }
-        /* Styles pour les informations video */
+
+        /* Styles pour les informations vidéo */
         .video-info {
             padding: 10px; /* Garder un padding normal pour la zone blanche */
-            height: 70px; /* Ajouter une hauteur fixe si necessaire pour garantir la hauteur */
-            position: relative; /* Position relative pour l'element contenant */
+            height: 70px; /* Ajouter une hauteur fixe si nécessaire pour garantir la hauteur */
+            position: relative; /* Position relative pour l'élément contenant */
         }
 
-        /* Styles pour le titre video */
+        /* Styles pour le titre vidéo */
         .video-title {
             font-weight: bold;
             font-size: 0.9em;
             margin: 0;
-            color: #27ae60;
-            position: absolute; /* Position absolue pour deplacer le titre */
-            top: 5px; /* Ajuster cette valeur pour deplacer le titre vers le haut */
+            color: #666;
+            position: absolute; /* Position absolue pour déplacer le titre */
+            top: 5px; /* Ajuster cette valeur pour déplacer le titre vers le haut */
         }
 
-        /* Styles pour la description video */
+        /* Styles pour la description vidéo */
         .video-description {
-            font-family: 'Open Sans', Arial, sans-serif; /* Police pour les descriptions */
             font-size: 0.8em;
             color: #666;
             position: relative;
-            height: 100px; /* Augmenter la hauteur pour s'assurer que les carres soient visibles */
+            height: 100px; /* Augmenter la hauteur pour s'assurer que les carrés soient visibles */
             display: flex;
             flex-direction: column;
             justify-content: flex-start; /* S'assurer que le texte commence en haut */
-            align-items: flex-start; /* Aligner les elements a gauche */
-            padding-top: 18px; /* Ajouter un espace superieur pour abaisser le texte */
-            text-align: left; /* Aligner le texte a gauche */
+            align-items: flex-start; /* Aligner les éléments à gauche */
+            padding-top: 18px; /* Ajouter un espace supérieur pour abaisser le texte */
+            text-align: left; /* Aligner le texte à gauche */
         }
 
         .centered-squares {
-            align-self: center; /* Centrer les carres */
-            margin-top: 5px; /* Utiliser margin-top pour pousser les carres vers le bas */
-            font-size: 1.2em; /* Ajustez la taille de la police si necessaire */
+            align-self: center; /* Centrer les carrés */
+            margin-top: 5px; /* Utiliser margin-top pour pousser les carrés vers le bas */
+            font-size: 1.2em; /* Ajustez la taille de la police si nécessaire */
         }
 
-        /* Styles pour les metadonnees video */
+        /* Styles pour les métadonnées vidéo */
         .video-meta {
             display: flex;
             justify-content: space-between;
@@ -197,6 +253,7 @@
             color: #888;
             margin-top: 5px;
         }
+
         /* Styles year-badge */
         .year-badge {
             position: absolute;
@@ -209,22 +266,26 @@
             border-radius: 10px;
             font-size: 0.7em;
         }
+
         /* Styles pour la mascotte */
         .mascot {
             position: fixed;
             width: 100px;
             animation: bounce 2s infinite;
         }
-        /* Styles pour la mascotte a droite */
+
+        /* Styles pour la mascotte à droite */
         .mascot-right {
             bottom: 20px;
             right: 20px;
         }
-        /* Styles pour la mascotte a gauche */
+
+        /* Styles pour la mascotte à gauche */
         .mascot-left {
             bottom: 20px;
             left: 20px;
         }
+
         /* Animation de rebondissement */
         @keyframes bounce {
             0%, 100% {
@@ -253,20 +314,19 @@
             transition: background-color 0.3s, transform 0.3s;
             position: fixed; /* Fixer la position du bouton */
             top: 0px; /* Placement en haut */
-            right: 0px; /* Placement à```html
+            right: 0px; /* Placement à droite */
         }
 
             .close-page:hover {
                 background-color: #a93226; /* Rouge plus foncé au survol */
-            transform: scale(1.1); /* Légère agrandissement au survol */
-            color: white;
-            text-decoration: none;
-            cursor: pointer;
-        }
+                transform: scale(1.1); /* Légère agrandissement au survol */
+                color: white;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
         /* Styles pour le logo */
         .logo {
-            position: absolute; /* Position absolue pour le logo */
-            top: 10px; /* Ajustez cette valeur pour le positionnement vertical */
             width: 126px; /* Ajustez cette valeur pour la taille du logo */
             height: auto; /* Maintenir le ratio d'aspect */
         }
@@ -292,490 +352,495 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tear, JP & Tearna&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-            <div class="subtitle">Awesome Adventures!</div>
+        <header class="header">
+            <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/logo.png?raw=true" alt="Logo" class="logo">
+            <div class="title-container">
+                <h1>Tear, JP & Tearna</h1>
+                <h2>Awesome Adventures!</h2>
+            </div>
             <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/logo.png?raw=true" alt="Logo" class="logo">
         </header>
+    </div>
+</body>
+</html>
 
+<!-- Selecteur d'annees -->
+<div class="year-selector">
+    <button class="year-button selected clicked" data-year="2024">2024</button>
+    <button class="year-button" data-year="2023">2023</button>
+    <button class="year-button" data-year="2022">2022</button>
+    <button class="year-button" data-year="2021">2021</button>
+    <button class="year-button" data-year="2020">2020</button>
+    <button class="year-button" data-year="2019">2019</button>
+    <button class="year-button" data-year="2018">2018</button>
+    <button class="year-button" data-year="2017">2017</button>
+    <button class="year-button" data-year="2016">2016</button>
+    <button class="year-button" data-year="2015">2015</button>
+    <button class="year-button" data-year="2014">2014</button>
+    <button class="year-button" data-year="2008-2013">&lt;&lt;&lt;&lt;</button>
+</div>
+<!-- Ajout du conteneur pour les vidéos -->
+<div id="videoGrid" class="video-grid">
+    <!-- Cet élément contiendra les cartes vidéo dynamiquement ajoutées -->
+</div>
+<!-- Bouton "fermeture" -->
+<button class="close-page">X</button>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('service-worker.js').then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
+        });
+    }
+</script>
 
-        <!-- Selecteur d'annees -->
-        <div class="year-selector">
-            <button class="year-button selected clicked" data-year="2024">2024</button>
-            <button class="year-button" data-year="2023">2023</button>
-            <button class="year-button" data-year="2022">2022</button>
-            <button class="year-button" data-year="2021">2021</button>
-            <button class="year-button" data-year="2020">2020</button>
-            <button class="year-button" data-year="2019">2019</button>
-            <button class="year-button" data-year="2018">2018</button>
-            <button class="year-button" data-year="2017">2017</button>
-            <button class="year-button" data-year="2016">2016</button>
-            <button class="year-button" data-year="2015">2015</button>
-            <button class="year-button" data-year="2014">2014</button>
-            <button class="year-button" data-year="2008-2013">&lt;&lt;&lt;&lt;</button>
-        </div>
-        <!-- Ajout du conteneur pour les vidéos -->
-        <div id="videoGrid" class="video-grid">
-            <!-- Cet élément contiendra les cartes vidéo dynamiquement ajoutées -->
-        </div>
-        <!-- Bouton "fermeture" -->
-        <button class="close-page">X</button>
-        <script>
-            if ('serviceWorker' in navigator) {
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('service-worker.js').then((registration) => {
-                        console.log('Service Worker registered with scope:', registration.scope);
-                    }).catch((error) => {
-                        console.log('Service Worker registration failed:', error);
-                    });
-                });
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const videos = [
+            {
+                year: 2024,
+                link: "https://youtu.be/bBsn3TjscOw&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202405%20-%20Second%20quarter.jpg?raw=true",
+                title: "Second Quarter",
+                description: "Photo collection from April to June.",
+            },
+            {
+                year: 2024,
+                link: "https://youtu.be/yuSFw5TJzKw&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202404%20-%20My%20two%20loves.jpg?raw=true",
+                title: "My Two Loves",
+                description: "A collection of cherished family moments.",
+            },
+            {
+                year: 2024,
+                link: "https://youtu.be/87J8lY-owHk&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202403%20-%20Songkran.jpg?raw=true",
+                title: "Songkran",
+                description: "Water fights and joyful celebrations!",
+            },
+            {
+                year: 2024,
+                link: "https://youtu.be/ZYKdnFzLtEw&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202402%20-%20First%20quarter.jpg?raw=true",
+                title: "First Quarter",
+                description: "A dazzling assembly of all our captured moments."
+            },
+            {
+                year: 2024,
+                link: "https://youtu.be/-KERHFSPBPk&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202401%20-%20Rabbits%20&%20Elephants.jpg?raw=true",
+                title: "Rabbits & Elephants",
+                description: "A charming tale of Rabbits & Elephants."
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/dzD-cFvOIss&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202317%20-%20Christmas.jpg?raw=true",
+                title: "Christmas",
+                description: "Experience the magic of Christmas moments!"
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/ZsRAdZP2a_U&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202316%20-%20Fourth%20quarter.jpg?raw=true",
+                title: "Fourth Quarter",
+                description: "Discover a compilation of the 4th quarter."
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/INyPlfq361Y&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202315%20-%20G.I.%20Tearna.jpg?raw=true",
+                title: "G.I. Tearna",
+                description: "An exciting scout obstacle course for daring adventures!"
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/qlHaZJrcsfs&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202314%20-%20Halloween.jpg?raw=true",
+                title: "Halloween",
+                description: "Get ready for a spine-chilling adventure!",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/EIFQmGbRfM4&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202313%20-%20Third%20quarter.jpg?raw=true",
+                title: "Third Quarter",
+                description: "Discover the diverse tapestry of the 3rd quarter.",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/ZoXVlIKZSLg&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202312%20-%20P.1%20-%20First%20half.jpg?raw=true",
+                title: "P.1. - First Half",
+                description: "From learning to taking part in fun activities.",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/li0YNCgt73o&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202311%20-%20My%20friend%20Cherie.jpg?raw=true",
+                title: "My Friend Cherie",
+                description: "Experience the heartwarming moments with my friend.",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/W5WeXE0AxNE&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202310%20-%20Beautiful%20girls.jpg?raw=true",
+                title: "Beautiful Girls",
+                description: "My wife, my daughter, and our friends—Amazing women.",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/jGw4D942RkA&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202309%20-%20Enjoying%20swimming%20pool.jpg?raw=true",
+                title: "Enjoying Swimming Pool",
+                description: "Having fun and relaxing at the swimming pool.",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/R_TgabVjjkk&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202308-%20Second%20quarter.jpg?raw=true",
+                title: "Second Quarter",
+                description: "Fun moments, and everyday adventures in photos.",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/2wp9PuBdw_Y&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202307%20-%20June%20outings.jpg?raw=true",
+                title: "June Outings",
+                description: "Fun-filled adventures and memorable moments.",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/JlskQfgYcSQ&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202306%20-%20School%20clothes.jpg?raw=true",
+                title: "School Clothes",
+                description: "Stylish and practical school outfits for every day.",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/3JmEIdviWNg&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202305%20-%20Kaeng%20Krachan.jpg?raw=true",
+                title: "Kaeng Krachan",
+                description: "River drifting adventure with life vests.",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/eGt7uklaeAo&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202304%20-%20First%20quarter.jpg?raw=true",
+                title: "First Quarter",
+                description: "Relive the highlights of our exciting first quarter!",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/Fg8Kh7s092o&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202303%20-%20Tearna%20Graduation%20ceremony.jpg?raw=true",
+                title: "Graduation Ceremony",
+                description: "Celebrating Tearna's amazing graduation milestone!",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/hmFmLasNy4c&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202302%20-%20Songkran%20in%20Hua%20Hin.jpg?raw=true",
+                title: "Songkran In Hua Hin",
+                description: "Splash into fun at Hua Hin's Songkran celebration!",
+            },
+            {
+                year: 2023,
+                link: "https://youtu.be/OLRv2-L_HZ4&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202301%20-%20Wedding%20Kingkhun%20&%20Dietmar.jpg?raw=true",
+                title: "Wedding Kingkhun-Dietmar",
+                description: "For the best or for the worst!<br><br>",
+            },
+            {
+                year: 2022,
+                link: "https://youtu.be/BwDlHBGcJpg&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202209%20-%20Others%20photos.jpg?raw=true",
+                title: "Other Photos",
+                description: "A potpourri of photographs.<br><br>",
+            },
+            {
+                year: 2022,
+                link: "https://youtu.be/zh-fdYRB87Y&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202208%20-%20Tearna%20Anuban%203.jpg?raw=true",
+                title: "Tearna Anuban 3",
+                description: "A bright and curious student, full of energy and joy.",
+            },
+            {
+                year: 2022,
+                link: "https://youtu.be/xrE_Lru6-eI&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202207%20-%20My%20two%20loves.jpg?raw=true",
+                title: "My Two Loves",
+                description: "Together, they complete my world.",
+            },
+            {
+                year: 2022,
+                link: "https://youtu.be/qDkoBtUXhwc&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202206%20-%20My%20parents.jpg?raw=true",
+                title: "My Parents",
+                description: "A dedication to my parents, the pillars of my life.",
+            },
+            {
+                year: 2022,
+                link: "https://youtu.be/38aIOLacUbU&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202205%20-%20My%20love.jpg?raw=true",
+                title: "My Love",
+                description: "My wife, the prettiest meeting of my life.",
+            },
+            {
+                year: 2022,
+                link: "https://youtu.be/zfM0hPiVtYU&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202204%20-%20Tearna%20Sport's%20days.jpg?raw=true",
+                title: "Tearna Sport's Days",
+                description: "Dive into Tearna Sport's Days: the joy of sportsmanship!",
+            },
+            {
+                year: 2022,
+                link: "https://youtu.be/aB39P1kxLIw&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202203%20-%20Halloween.jpg?raw=true",
+                title: "Halloween",
+                description: "Enter the realm of fright and delight this Halloween!",
+            },
+            {
+                year: 2022,
+                link: "https://youtu.be/PgAK8Ilg0RY8&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202202%20-%20Mother's%20day.jpg?raw=true",
+                title: "Mother's Day",
+                description: "A tribute to my mother's love, and unwavering support.",
+            },
+            {
+                year: 2022,
+                link: "https://youtu.be/kAeH92NuaIY&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202201%20-%20Our%20cats.jpg?raw=true",
+                title: "Our Cats",
+                description: "Snapshot memories of our cats.",
+            },
+            {
+                year: 2021,
+                link: "https://youtu.be/2hioyl6sFvM&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202102%20-%20100%20photos%20for%201%20year.jpg?raw=true",
+                title: "100 Photos For 1 Year",
+                description: "A year in review: moments captured.",
+            },
+            {
+                year: 2021,
+                link: "https://youtu.be/H8FMl-cN4Kk&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202101%20-%20Tearna%20Anuban%202.jpg?raw=true",
+                title: "Tearna Anuban 2",
+                description: "Tearna's Second Year Highlights.",
+            },
+            {
+                year: 2020,
+                link: "https://youtu.be/mcAGK6SlDyM&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202002%20-%20202%20photos%20for%201%20year.jpg?raw=true",
+                title: "202 Photos For 1 Year",
+                description: "See the love, laughter, and adventures that filled our year!",
+            },
+            {
+                year: 2020,
+                link: "https://youtu.be/eitV_GJo-_U&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202001%20-%20Tearna%20Anuban%201.jpg?raw=true",
+                title: "Tearna Anuban 1",
+                description: "Tearna's entry into the world of education.",
+            },
+            {
+                year: 2019,
+                link: "https://youtu.be/KY8rpk9h4u0&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201904%20-%20Photo%20jumble.jpg?raw=true",
+                title: "Photos Jumble",
+                description: "A vibrant collection of joyful moments.",
+            },
+            {
+                year: 2019,
+                link: "https://youtu.be/XYt5OHjXDOw&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201903%20-%20Wedding%20day%20Tear%20&%20JP.jpg?raw=true",
+                title: "Wedding Day Tear & JP",
+                description: "A celebration of a lifelong journey together.",
+            },
+            {
+                year: 2019,
+                link: "https://youtu.be/S_3xcfFVEaE&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201902%20-%20Tearna%20in%20kindergarden.jpg?raw=true",
+                title: "Tearna In Kindergarden",
+                description: "Exploring and growing in early education.",
+            },
+            {
+                year: 2019,
+                link: "https://youtu.be/0OU5duXeZcw&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201901%20-%20Wedding%20Dave%20&%20Noy.jpg?raw=true",
+                title: "Wedding Dave & Noy",
+                description: "Cherished moments of togetherness!",
+            },
+            {
+                year: 2018,
+                link: "https://youtu.be/KzpOW5V8kE4&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201803%20-%20An%20overview%20of%202018.jpg?raw=true",
+                title: "An Overview Of 2018",
+                description: "Highlights and key moments.<br><br>",
+            },
+            {
+                year: 2018,
+                link: "https://youtu.be/OaPjwyQfsUc&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201802%20-%20France.jpg?raw=true",
+                title: "France",
+                description: "Discovery of Paris, Epehy, Amiens, Cambrai, Gerberoy...",
+            },
+            {
+                year: 2018,
+                link: "https://youtu.be/5RpDR66F8r8&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201801%20-%20Tearna%20-%201st%20Songkran.jpg?raw=true",
+                title: "Tearna - 1st Songkran",
+                description: "First time experiencing the water festival!",
+            },
+            {
+                year: 2017,
+                link: "https://youtu.be/uaS6xHAyu2s&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201702%20-%20Tearna%20is%201%20year%20old.jpg?raw=true",
+                title: "Tearna Is 1 Year Old",
+                description: "One year, countless treasured memories!",
+            },
+            {
+                year: 2017,
+                link: "https://youtu.be/kyJFVwk1I1I&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201701%20-%20Tearna%20is%20doing%20her%20show.jpg?raw=true",
+                title: "Tearna Is Doing Her Show",
+                description: "A little star shining brightly!<br><br>",
+            },
+            {
+                year: 2016,
+                link: "https://youtu.be/US4_64SZ9Tk&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201602%20-%20Tearna%20is%201%20month%20old.jpg?raw=true",
+                title: "Tearna Is 1 Month Old",
+                description: "Precious First Month Moments!<br><br>",
+            },
+            {
+                year: 2016,
+                link: "https://youtu.be/6-Wu091LuOg&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201601%20-%20Tearna's%20conception.jpg?raw=true",
+                title: "Tearna's Conception",
+                description: "The first steps of a new journey!",
+            },
+            {
+                year: 2015,
+                link: "https://youtu.be/sR32bGZUBPE&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201503%20-%20One%20year%20of%20love.jpg?raw=true",
+                title: "One Year Of Love",
+                description: "Our first year together has been nothing short of amazing.",
+            },
+            {
+                year: 2015,
+                link: "https://youtu.be/kOvMidlWwYA&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201502%20-%20Tear's%20birthday.jpg?raw=true",
+                title: "Tear's Birthday",
+                description: "On this day, I want you to know how much you mean to me.",
+            },
+            {
+                year: 2015,
+                link: "https://youtu.be/X5_PO7cg2Rg&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201501%20-%20The%20sunshine%20of%20my%20life.jpg?raw=true",
+                title: "The Sunshine Of My Life",
+                description: "With you, every day feels like a sunny day.",
+            },
+            {
+                year: 2014,
+                link: "https://youtu.be/UQSr4GKlxN0&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201403%20-%20Once%20upon%20a%20girl....jpg?raw=true",
+                title: "Once Uppon A Girl...",
+                description: "Discover the moments that shaped Tear's destiny.",
+            },
+            {
+                year: 2014,
+                link: "https://youtu.be/lfy-nfqQwm0&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201402%20-%20You%20&%20I.jpg?raw=true",
+                title: "You & I",
+                description: "You & I : Forever And A Day.<br><br>",
+            },
+            {
+                year: 2014,
+                link: "https://youtu.be/2fbLOKyrC1o&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201401%20-%20Me%20in%20Hua%20Hin.jpg?raw=true",
+                title: "Me In Hua Hin",
+                description: "Exploring Hua Hin, from its beaches to markets.",
+            },
+            {
+                year: 2013,
+                link: "https://youtu.be/XKJPeUHzl5U&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201305%20-%20Songkran%20in%20Bangkok.jpg?raw=true",
+                title: "Songkran In Bangkok",
+                description: "Water Fights: Non-stop fun at Sukhumvit 13.",
+            },
+            {
+                year: 2013,
+                link: "https://youtu.be/Y5GSDpRfcj0&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201304%20-%20Me%20in%20the%20Philippines.jpg?raw=true",
+                title: "Me In The Philippines",
+                description: "Puerto Princesa, Manila, Angeles city & Cebu.",
+            },
+            {
+                year: 2013,
+                link: "https://youtu.be/fYmoIgTtgdw&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201303%20-%20Me%20in%20Malaysia.jpg?raw=true",
+                title: "Me In Malaysia",
+                description: "Kuala Lumpur: Unique blend of cultures.",
+            },
+            {
+                year: 2013,
+                link: "https://youtu.be/sImoZQZ-beA&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201302%20-%20Me%20in%20Indonesia.jpg?raw=true",
+                title: "Me In Indonesia",
+                description: "Exploring Bali was a delightful adventure.",
+            },
+            {
+                year: 2013,
+                link: "https://youtu.be/akTKoJd0RY4&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201301%20-%20Me%20in%20Macau.jpg?raw=true",
+                title: "Me In Macau",
+                description: "Historic Portuguese buildings contrast with the casinos.",
+            },
+            {
+                year: 2012,
+                link: "https://youtu.be/X4dNrZbHHOY&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201201%20-%20Me%20in%20Thailand.jpg?raw=true",
+                title: "Me In Thailand",
+                description: "Join me as I explore the sights of Thailand.",
+            },
+            {
+                year: 2012,
+                link: "https://youtu.be/m4EVSRvb_Rk&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201202%20-%20Me%20in%20Thailand.jpg?raw=true",
+                title: "Me In Thailand",
+                description: "Accompany me on my new trip to Thailand.",
+            },
+            {
+                year: 2011,
+                link: "https://youtu.be/oKIEctzPYMA&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/2011%20-%20Me%20in%20China.jpg?raw=true",
+                title: "Me In China",
+                description: "Never two without three... videos!",
+            },
+            {
+                year: 2010,
+                link: "https://youtu.be/q7EgKbQXHNc&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/2010%20-%20Me%20in%20China.jpg?raw=true",
+                title: "Me In China",
+                description: "Let's explore new horizons together.",
+            },
+            {
+                year: 2008,
+                link: "https://youtu.be/e7geYAXlkes&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/2008%20-%20Me%20in%20China.jpg?raw=true",
+                title: "Me In China",
+                description: "Embark on this adventure with me!",
             }
-        </script>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const videos = [
-                    {
-                        year: 2024,
-                        link: "https://youtu.be/bBsn3TjscOw&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202405%20-%20Second%20quarter.jpg?raw=true",
-                        title: "Second Quarter",
-                        description: "Photo collection from April to June.",
-                    },
-                    {
-                        year: 2024,
-                        link: "https://youtu.be/yuSFw5TJzKw&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202404%20-%20My%20two%20loves.jpg?raw=true",
-                        title: "My Two Loves",
-                        description: "A collection of cherished family moments.",
-                    },
-                    {
-                        year: 2024,
-                        link: "https://youtu.be/87J8lY-owHk&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202403%20-%20Songkran.jpg?raw=true",
-                        title: "Songkran",
-                        description: "Water fights and joyful celebrations!",
-                    },
-                    {
-                        year: 2024,
-                        link: "https://youtu.be/ZYKdnFzLtEw&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202402%20-%20First%20quarter.jpg?raw=true",
-                        title: "First Quarter",
-                        description: "A dazzling assembly of all our captured moments."
-                    },
-                    {
-                        year: 2024,
-                        link: "https://youtu.be/-KERHFSPBPk&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202401%20-%20Rabbits%20&%20Elephants.jpg?raw=true",
-                        title: "Rabbits & Elephants",
-                        description: "A charming tale of Rabbits & Elephants."
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/dzD-cFvOIss&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202317%20-%20Christmas.jpg?raw=true",
-                        title: "Christmas",
-                        description: "Experience the magic of Christmas moments!"
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/ZsRAdZP2a_U&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202316%20-%20Fourth%20quarter.jpg?raw=true",
-                        title: "Fourth Quarter",
-                        description: "Discover a compilation of the 4th quarter."
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/INyPlfq361Y&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202315%20-%20G.I.%20Tearna.jpg?raw=true",
-                        title: "G.I. Tearna",
-                        description: "An exciting scout obstacle course for daring adventures!"
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/qlHaZJrcsfs&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202314%20-%20Halloween.jpg?raw=true",
-                        title: "Halloween",
-                        description: "Get ready for a spine-chilling adventure!",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/EIFQmGbRfM4&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202313%20-%20Third%20quarter.jpg?raw=true",
-                        title: "Third Quarter",
-                        description: "Discover the diverse tapestry of the 3rd quarter.",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/ZoXVlIKZSLg&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202312%20-%20P.1%20-%20First%20half.jpg?raw=true",
-                        title: "P.1. - First Half",
-                        description: "From learning to taking part in fun activities.",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/li0YNCgt73o&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202311%20-%20My%20friend%20Cherie.jpg?raw=true",
-                        title: "My Friend Cherie",
-                        description: "Experience the heartwarming moments with my friend.",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/W5WeXE0AxNE&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202310%20-%20Beautiful%20girls.jpg?raw=true",
-                        title: "Beautiful Girls",
-                        description: "My wife, my daughter, and our friends—Amazing women.",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/jGw4D942RkA&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202309%20-%20Enjoying%20swimming%20pool.jpg?raw=true",
-                        title: "Enjoying Swimming Pool",
-                        description: "Having fun and relaxing at the swimming pool.",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/R_TgabVjjkk&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202308-%20Second%20quarter.jpg?raw=true",
-                        title: "Second Quarter",
-                        description: "Fun moments, and everyday adventures in photos.",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/2wp9PuBdw_Y&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202307%20-%20June%20outings.jpg?raw=true",
-                        title: "June Outings",
-                        description: "Fun-filled adventures and memorable moments.",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/JlskQfgYcSQ&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202306%20-%20School%20clothes.jpg?raw=true",
-                        title: "School Clothes",
-                        description: "Stylish and practical school outfits for every day.",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/3JmEIdviWNg&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202305%20-%20Kaeng%20Krachan.jpg?raw=true",
-                        title: "Kaeng Krachan",
-                        description: "River drifting adventure with life vests.",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/eGt7uklaeAo&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202304%20-%20First%20quarter.jpg?raw=true",
-                        title: "First Quarter",
-                        description: "Relive the highlights of our exciting first quarter!",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/Fg8Kh7s092o&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202303%20-%20Tearna%20Graduation%20ceremony.jpg?raw=true",
-                        title: "Graduation Ceremony",
-                        description: "Celebrating Tearna's amazing graduation milestone!",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/hmFmLasNy4c&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202302%20-%20Songkran%20in%20Hua%20Hin.jpg?raw=true",
-                        title: "Songkran In Hua Hin",
-                        description: "Splash into fun at Hua Hin's Songkran celebration!",
-                    },
-                    {
-                        year: 2023,
-                        link: "https://youtu.be/OLRv2-L_HZ4&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202301%20-%20Wedding%20Kingkhun%20&%20Dietmar.jpg?raw=true",
-                        title: "Wedding Kingkhun-Dietmar",
-                        description: "For the best or for the worst!<br><br>",
-                    },
-                    {
-                        year: 2022,
-                        link: "https://youtu.be/BwDlHBGcJpg&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202209%20-%20Others%20photos.jpg?raw=true",
-                        title: "Other Photos",
-                        description: "A potpourri of photographs.<br><br>",
-                    },
-                    {
-                        year: 2022,
-                        link: "https://youtu.be/zh-fdYRB87Y&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202208%20-%20Tearna%20Anuban%203.jpg?raw=true",
-                        title: "Tearna Anuban 3",
-                        description: "A bright and curious student, full of energy and joy.",
-                    },
-                    {
-                        year: 2022,
-                        link: "https://youtu.be/xrE_Lru6-eI&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202207%20-%20My%20two%20loves.jpg?raw=true",
-                        title: "My Two Loves",
-                        description: "Together, they complete my world.",
-                    },
-                    {
-                        year: 2022,
-                        link: "https://youtu.be/qDkoBtUXhwc&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202206%20-%20My%20parents.jpg?raw=true",
-                        title: "My Parents",
-                        description: "A dedication to my parents, the pillars of my life.",
-                    },
-                    {
-                        year: 2022,
-                        link: "https://youtu.be/38aIOLacUbU&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202205%20-%20My%20love.jpg?raw=true",
-                        title: "My Love",
-                        description: "My wife, the prettiest meeting of my life.",
-                    },
-                    {
-                        year: 2022,
-                        link: "https://youtu.be/zfM0hPiVtYU&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202204%20-%20Tearna%20Sport's%20days.jpg?raw=true",
-                        title: "Tearna Sport's Days",
-                        description: "Dive into Tearna Sport's Days: the joy of sportsmanship!",
-                    },
-                    {
-                        year: 2022,
-                        link: "https://youtu.be/aB39P1kxLIw&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202203%20-%20Halloween.jpg?raw=true",
-                        title: "Halloween",
-                        description: "Enter the realm of fright and delight this Halloween!",
-                    },
-                    {
-                        year: 2022,
-                        link: "https://youtu.be/PgAK8Ilg0RY8&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202202%20-%20Mother's%20day.jpg?raw=true",
-                        title: "Mother's Day",
-                        description: "A tribute to my mother's love, and unwavering support.",
-                    },
-                    {
-                        year: 2022,
-                        link: "https://youtu.be/kAeH92NuaIY&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202201%20-%20Our%20cats.jpg?raw=true",
-                        title: "Our Cats",
-                        description: "Snapshot memories of our cats.",
-                    },
-                    {
-                        year: 2021,
-                        link: "https://youtu.be/2hioyl6sFvM&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202102%20-%20100%20photos%20for%201%20year.jpg?raw=true",
-                        title: "100 Photos For 1 Year",
-                        description: "A year in review: moments captured.",
-                    },
-                    {
-                        year: 2021,
-                        link: "https://youtu.be/H8FMl-cN4Kk&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202101%20-%20Tearna%20Anuban%202.jpg?raw=true",
-                        title: "Tearna Anuban 2",
-                        description: "Tearna's Second Year Highlights.",
-                    },
-                    {
-                        year: 2020,
-                        link: "https://youtu.be/mcAGK6SlDyM&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202002%20-%20202%20photos%20for%201%20year.jpg?raw=true",
-                        title: "202 Photos For 1 Year",
-                        description: "See the love, laughter, and adventures that filled our year!",
-                    },
-                    {
-                        year: 2020,
-                        link: "https://youtu.be/eitV_GJo-_U&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202001%20-%20Tearna%20Anuban%201.jpg?raw=true",
-                        title: "Tearna Anuban 1",
-                        description: "Tearna's entry into the world of education.",
-                    },
-                    {
-                        year: 2019,
-                        link: "https://youtu.be/KY8rpk9h4u0&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201904%20-%20Photo%20jumble.jpg?raw=true",
-                        title: "Photos Jumble",
-                        description: "A vibrant collection of joyful moments.",
-                    },
-                    {
-                        year: 2019,
-                        link: "https://youtu.be/XYt5OHjXDOw&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201903%20-%20Wedding%20day%20Tear%20&%20JP.jpg?raw=true",
-                        title: "Wedding Day Tear & JP",
-                        description: "A celebration of a lifelong journey together.",
-                    },
-                    {
-                        year: 2019,
-                        link: "https://youtu.be/S_3xcfFVEaE&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201902%20-%20Tearna%20in%20kindergarden.jpg?raw=true",
-                        title: "Tearna In Kindergarden",
-                        description: "Exploring and growing in early education.",
-                    },
-                    {
-                        year: 2019,
-                        link: "https://youtu.be/0OU5duXeZcw&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201901%20-%20Wedding%20Dave%20&%20Noy.jpg?raw=true",
-                        title: "Wedding Dave & Noy",
-                        description: "Cherished moments of togetherness!",
-                    },
-                    {
-                        year: 2018,
-                        link: "https://youtu.be/KzpOW5V8kE4&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201803%20-%20An%20overview%20of%202018.jpg?raw=true",
-                        title: "An Overview Of 2018",
-                        description: "Highlights and key moments.<br><br>",
-                    },
-                    {
-                        year: 2018,
-                        link: "https://youtu.be/OaPjwyQfsUc&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201802%20-%20France.jpg?raw=true",
-                        title: "France",
-                        description: "Discovery of Paris, Epehy, Amiens, Cambrai, Gerberoy...",
-                    },
-                    {
-                        year: 2018,
-                        link: "https://youtu.be/5RpDR66F8r8&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201801%20-%20Tearna%20-%201st%20Songkran.jpg?raw=true",
-                        title: "Tearna - 1st Songkran",
-                        description: "First time experiencing the water festival!",
-                    },
-                    {
-                        year: 2017,
-                        link: "https://youtu.be/uaS6xHAyu2s&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201702%20-%20Tearna%20is%201%20year%20old.jpg?raw=true",
-                        title: "Tearna Is 1 Year Old",
-                        description: "One year, countless treasured memories!",
-                    },
-                    {
-                        year: 2017,
-                        link: "https://youtu.be/kyJFVwk1I1I&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201701%20-%20Tearna%20is%20doing%20her%20show.jpg?raw=true",
-                        title: "Tearna Is Doing Her Show",
-                        description: "A little star shining brightly!<br><br>",
-                    },
-                    {
-                        year: 2016,
-                        link: "https://youtu.be/US4_64SZ9Tk&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201602%20-%20Tearna%20is%201%20month%20old.jpg?raw=true",
-                        title: "Tearna Is 1 Month Old",
-                        description: "Precious First Month Moments!<br><br>",
-                    },
-                    {
-                        year: 2016,
-                        link: "https://youtu.be/6-Wu091LuOg&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201601%20-%20Tearna's%20conception.jpg?raw=true",
-                        title: "Tearna's Conception",
-                        description: "The first steps of a new journey!",
-                    },
-                    {
-                        year: 2015,
-                        link: "https://youtu.be/sR32bGZUBPE&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201503%20-%20One%20year%20of%20love.jpg?raw=true",
-                        title: "One Year Of Love",
-                        description: "Our first year together has been nothing short of amazing.",
-                    },
-                    {
-                        year: 2015,
-                        link: "https://youtu.be/kOvMidlWwYA&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201502%20-%20Tear's%20birthday.jpg?raw=true",
-                        title: "Tear's Birthday",
-                        description: "On this day, I want you to know how much you mean to me.",
-                    },
-                    {
-                        year: 2015,
-                        link: "https://youtu.be/X5_PO7cg2Rg&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201501%20-%20The%20sunshine%20of%20my%20life.jpg?raw=true",
-                        title: "The Sunshine Of My Life",
-                        description: "With you, every day feels like a sunny day.",
-                    },
-                    {
-                        year: 2014,
-                        link: "https://youtu.be/UQSr4GKlxN0&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201403%20-%20Once%20upon%20a%20girl....jpg?raw=true",
-                        title: "Once Uppon A Girl...",
-                        description: "Discover the moments that shaped Tear's destiny.",
-                    },
-                    {
-                        year: 2014,
-                        link: "https://youtu.be/lfy-nfqQwm0&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201402%20-%20You%20&%20I.jpg?raw=true",
-                        title: "You & I",
-                        description: "You & I : Forever And A Day.<br><br>",
-                    },
-                    {
-                        year: 2014,
-                        link: "https://youtu.be/2fbLOKyrC1o&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201401%20-%20Me%20in%20Hua%20Hin.jpg?raw=true",
-                        title: "Me In Hua Hin",
-                        description: "Exploring Hua Hin, from its beaches to markets.",
-                    },
-                    {
-                        year: 2013,
-                        link: "https://youtu.be/XKJPeUHzl5U&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201305%20-%20Songkran%20in%20Bangkok.jpg?raw=true",
-                        title: "Songkran In Bangkok",
-                        description: "Water Fights: Non-stop fun at Sukhumvit 13.",
-                    },
-                    {
-                        year: 2013,
-                        link: "https://youtu.be/Y5GSDpRfcj0&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201304%20-%20Me%20in%20the%20Philippines.jpg?raw=true",
-                        title: "Me In The Philippines",
-                        description: "Puerto Princesa, Manila, Angeles city & Cebu.",
-                    },
-                    {
-                        year: 2013,
-                        link: "https://youtu.be/fYmoIgTtgdw&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201303%20-%20Me%20in%20Malaysia.jpg?raw=true",
-                        title: "Me In Malaysia",
-                        description: "Kuala Lumpur: Unique blend of cultures.",
-                    },
-                    {
-                        year: 2013,
-                        link: "https://youtu.be/sImoZQZ-beA&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201302%20-%20Me%20in%20Indonesia.jpg?raw=true",
-                        title: "Me In Indonesia",
-                        description: "Exploring Bali was a delightful adventure.",
-                    },
-                    {
-                        year: 2013,
-                        link: "https://youtu.be/akTKoJd0RY4&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201301%20-%20Me%20in%20Macau.jpg?raw=true",
-                        title: "Me In Macau",
-                        description: "Historic Portuguese buildings contrast with the casinos.",
-                    },
-                    {
-                        year: 2012,
-                        link: "https://youtu.be/X4dNrZbHHOY&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201201%20-%20Me%20in%20Thailand.jpg?raw=true",
-                        title: "Me In Thailand",
-                        description: "Join me as I explore the sights of Thailand.",
-                    },
-                    {
-                        year: 2012,
-                        link: "https://youtu.be/m4EVSRvb_Rk&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201202%20-%20Me%20in%20Thailand.jpg?raw=true",
-                        title: "Me In Thailand",
-                        description: "Accompany me on my new trip to Thailand.",
-                    },
-                    {
-                        year: 2011,
-                        link: "https://youtu.be/oKIEctzPYMA&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/2011%20-%20Me%20in%20China.jpg?raw=true",
-                        title: "Me In China",
-                        description: "Never two without three... videos!",
-                    },
-                    {
-                        year: 2010,
-                        link: "https://youtu.be/q7EgKbQXHNc&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/2010%20-%20Me%20in%20China.jpg?raw=true",
-                        title: "Me In China",
-                        description: "Let's explore new horizons together.",
-                    },
-                    {
-                        year: 2008,
-                        link: "https://youtu.be/e7geYAXlkes&autoplay=1&rel=0&modestbranding=1",
-                        imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/2008%20-%20Me%20in%20China.jpg?raw=true",
-                        title: "Me In China",
-                        description: "Embark on this adventure with me!",
-                    }
-                ];
-                const videoGrid = document.getElementById("videoGrid");
-                videos.forEach(video => {
-                    const videoCard = document.createElement("div");
-                    videoCard.classList.add("video-card");
-                    videoCard.setAttribute("data-year", video.year);
-                    videoCard.innerHTML = `
+        ];
+        const videoGrid = document.getElementById("videoGrid");
+        videos.forEach(video => {
+            const videoCard = document.createElement("div");
+            videoCard.classList.add("video-card");
+            videoCard.setAttribute("data-year", video.year);
+            videoCard.innerHTML = `
                                                     <a href="${video.link}" target="_blank">
                                                         <img src="${video.imgSrc}" alt="${video.title}" class="video-thumbnail">
                                                     </a>
@@ -787,81 +852,81 @@
                                                         </div>
                                                     </div>
                                                 `;
-                    videoGrid.appendChild(videoCard);
-                });
-            });
-        </script>
-        <!-- Mascotte a droite -->
-        <div class="mascot mascot-right">
-            <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/RMascot.png?raw=true" alt="Mascot" class="mascot-img">
-        </div>
-        <!-- Mascotte a gauche -->
-        <div class="mascot mascot-left">
-            <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/LMascot.png?raw=true" alt="Mascot" class="mascot-img">
-        </div>
+            videoGrid.appendChild(videoCard);
+        });
+    });
+</script>
+<!-- Mascotte a droite -->
+<div class="mascot mascot-right">
+    <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/RMascot.png?raw=true" alt="Mascot" class="mascot-img">
+</div>
+<!-- Mascotte a gauche -->
+<div class="mascot mascot-left">
+    <img src="https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/LMascot.png?raw=true" alt="Mascot" class="mascot-img">
+</div>
     </div>
-    <!-- Script JavaScript pour la gestion des années -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var logo = document.querySelector('.logo');
-            var title = document.querySelector('h1');
-            var titlePosition = title.getBoundingClientRect();
-            logo.style.left = (titlePosition.left - logo.offsetWidth - 550) + 'px';
-            var closePageButton = document.querySelector('.close-page');
-            var yearButtons = document.querySelectorAll('.year-button');
-            var videoCards = document.querySelectorAll('.video-card');
-            // Gestion du bouton de fermeture de la page
-            closePageButton.addEventListener('click', function () {
-                window.close();
-            });
-            // Ajouter des badges d'année pour les vidéos entre 2008 et 2013
-            videoCards.forEach(function (card) {
-                var year = parseInt(card.getAttribute('data-year'));
-                if (year >= 2008 && year <= 2013) {
-                    var yearBadge = document.createElement('div');
-                    yearBadge.classList.add('year-badge');
-                    yearBadge.textContent = year;
-                    card.appendChild(yearBadge);
+<!-- Script JavaScript pour la gestion des années -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var logo = document.querySelector('.logo');
+        var title = document.querySelector('h1');
+        var titlePosition = title.getBoundingClientRect();
+        logo.style.left = (titlePosition.left - logo.offsetWidth - 550) + 'px';
+        var closePageButton = document.querySelector('.close-page');
+        var yearButtons = document.querySelectorAll('.year-button');
+        var videoCards = document.querySelectorAll('.video-card');
+        // Gestion du bouton de fermeture de la page
+        closePageButton.addEventListener('click', function () {
+            window.close();
+        });
+        // Ajouter des badges d'année pour les vidéos entre 2008 et 2013
+        videoCards.forEach(function (card) {
+            var year = parseInt(card.getAttribute('data-year'));
+            if (year >= 2008 && year <= 2013) {
+                var yearBadge = document.createElement('div');
+                yearBadge.classList.add('year-badge');
+                yearBadge.textContent = year;
+                card.appendChild(yearBadge);
+            }
+        });
+        // Fonction pour filtrer les vidéos par année
+        function filterVideosByYear(year) {
+            videoCards.forEach(card => {
+                const cardYear = parseInt(card.getAttribute('data-year'));
+                if (year === '2008-2013') {
+                    if (cardYear >= 2008 && cardYear <= 2013) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                } else {
+                    if (cardYear === parseInt(year)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
                 }
             });
-            // Fonction pour filtrer les vidéos par année
-            function filterVideosByYear(year) {
-                videoCards.forEach(card => {
-                    const cardYear = parseInt(card.getAttribute('data-year'));
-                    if (year === '2008-2013') {
-                        if (cardYear >= 2008 && cardYear <= 2013) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    } else {
-                        if (cardYear === parseInt(year)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    }
-                });
-            }
-            // Sélectionne le bouton pour l'année 2024 et le marque comme sélectionné et cliqué par défaut
-            const defaultYear = '2024';
-            const defaultYearButton = document.querySelector(`.year-button[data-year="${defaultYear}"]`);
-            defaultYearButton.classList.add('selected', 'clicked');
-            filterVideosByYear(defaultYear);
+        }
+        // Sélectionne le bouton pour l'année 2024 et le marque comme sélectionné et cliqué par défaut
+        const defaultYear = '2024';
+        const defaultYearButton = document.querySelector(`.year-button[data-year="${defaultYear}"]`);
+        defaultYearButton.classList.add('selected', 'clicked');
+        filterVideosByYear(defaultYear);
 
-            // Écoute les clics sur les boutons d'année
-            yearButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    if (button.classList.contains('disabled')) return;
-                    const selectedYear = button.getAttribute('data-year');
-                    // Mettre à jour le bouton sélectionné
-                    yearButtons.forEach(btn => btn.classList.remove('selected', 'clicked'));
-                    button.classList.add('selected', 'clicked');
-                    // Filtrer les vidéos
-                    filterVideosByYear(selectedYear);
-                });
+        // Écoute les clics sur les boutons d'année
+        yearButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (button.classList.contains('disabled')) return;
+                const selectedYear = button.getAttribute('data-year');
+                // Mettre à jour le bouton sélectionné
+                yearButtons.forEach(btn => btn.classList.remove('selected', 'clicked'));
+                button.classList.add('selected', 'clicked');
+                // Filtrer les vidéos
+                filterVideosByYear(selectedYear);
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
