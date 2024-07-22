@@ -220,7 +220,7 @@
             font-weight: bold;
             font-size: 0.9em;
             margin: 0;
-            color: #666;
+            color: #005c99;
             position: absolute; /* Position absolue pour déplacer le titre */
             top: 5px; /* Ajuster cette valeur pour déplacer le titre vers le haut */
         }
@@ -228,7 +228,7 @@
         /* Styles pour la description vidéo */
         .video-description {
             font-size: 0.8em;
-            color: #666;
+            color: #3498db;
             position: relative;
             height: 100px; /* Augmenter la hauteur pour s'assurer que les carrés soient visibles */
             display: flex;
@@ -242,7 +242,9 @@
         .centered-squares {
             align-self: center; /* Centrer les carrés */
             margin-top: 5px; /* Utiliser margin-top pour pousser les carrés vers le bas */
-            font-size: 1.2em; /* Ajustez la taille de la police si nécessaire */
+            color: #005c99;
+            font-size: 0.6em;
+            font-weight: bold;
         }
 
         /* Styles pour les métadonnées vidéo */
@@ -405,7 +407,7 @@
                 link: "https://youtu.be/bBsn3TjscOw&autoplay=1&rel=0&modestbranding=1",
                 imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202405%20-%20Second%20quarter.jpg?raw=true",
                 title: "Second Quarter",
-                description: "Photo collection from April to June.",
+                description: "Photo collection from April to June.<br><br>",
             },
             {
                 year: 2024,
@@ -573,7 +575,7 @@
                 link: "https://youtu.be/xrE_Lru6-eI&autoplay=1&rel=0&modestbranding=1",
                 imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202207%20-%20My%20two%20loves.jpg?raw=true",
                 title: "My Two Loves",
-                description: "Together, they complete my world.",
+                description: "Together, they complete my world.<br><br>",
             },
             {
                 year: 2022,
@@ -615,7 +617,7 @@
                 link: "https://youtu.be/kAeH92NuaIY&autoplay=1&rel=0&modestbranding=1",
                 imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202201%20-%20Our%20cats.jpg?raw=true",
                 title: "Our Cats",
-                description: "Snapshot memories of our cats.",
+                description: "Snapshot memories of our cats.<br><br>",
             },
             {
                 year: 2021,
@@ -629,7 +631,7 @@
                 link: "https://youtu.be/H8FMl-cN4Kk&autoplay=1&rel=0&modestbranding=1",
                 imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202101%20-%20Tearna%20Anuban%202.jpg?raw=true",
                 title: "Tearna Anuban 2",
-                description: "Tearna's Second Year Highlights.",
+                description: "Tearna's Second Year Highlights.<br><br>",
             },
             {
                 year: 2020,
@@ -720,7 +722,7 @@
                 link: "https://youtu.be/6-Wu091LuOg&autoplay=1&rel=0&modestbranding=1",
                 imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/201601%20-%20Tearna's%20conception.jpg?raw=true",
                 title: "Tearna's Conception",
-                description: "The first steps of a new journey!",
+                description: "The first steps of a new journey!<br><br>",
             },
             {
                 year: 2015,
@@ -818,7 +820,7 @@
                 link: "https://youtu.be/oKIEctzPYMA&autoplay=1&rel=0&modestbranding=1",
                 imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/2011%20-%20Me%20in%20China.jpg?raw=true",
                 title: "Me In China",
-                description: "Never two without three... videos!",
+                description: "Never two without three... videos!<br><br>",
             },
             {
                 year: 2010,
@@ -832,7 +834,7 @@
                 link: "https://youtu.be/e7geYAXlkes&autoplay=1&rel=0&modestbranding=1",
                 imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/2008%20-%20Me%20in%20China.jpg?raw=true",
                 title: "Me In China",
-                description: "Embark on this adventure with me!",
+                description: "Embark on this adventure with me!<br><br>",
             }
         ];
         const videoGrid = document.getElementById("videoGrid");
@@ -848,7 +850,7 @@
                                                         <div class="video-title">${video.title}</div>
                                                         <div class="video-description">
                                                             ${video.description}
-                                                            <div class="centered-squares">&#9633;&#9633;&#9633;</div>
+                                                            <div class="centered-squares">&#9632;&nbsp;&nbsp;&#9632;&nbsp;&nbsp;&#9632;</div>
                                                         </div>
                                                     </div>
                                                 `;
