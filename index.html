@@ -368,7 +368,8 @@
 
 <!-- Selecteur d'annees -->
 <div class="year-selector">
-    <button class="year-button selected clicked" data-year="2024">2024</button>
+    <button class="year-button selected clicked" data-year="2025">2025</button>
+    <button class="year-button" data-year="2024">2024</button>
     <button class="year-button" data-year="2023">2023</button>
     <button class="year-button" data-year="2022">2022</button>
     <button class="year-button" data-year="2021">2021</button>
@@ -402,6 +403,13 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const videos = [
+            {
+                year: 2025,
+                link: "https://youtu.be/ccy0I9VaqUM&autoplay=1&rel=0&modestbranding=1",
+                imgSrc: "https://github.com/JP77110/My-Videos/blob/main/My%20Thumbnails/202501%20-%20First%20Quarter.jpg?raw=true",
+                title: "First Quarter",
+                description: "The Angel and the Devils.<br><br>",
+            },
             {
                 year: 2024,
                 link: "https://youtu.be/jUoccXa9Wrs&autoplay=1&rel=0&modestbranding=1",
@@ -993,8 +1001,8 @@
                 }
             });
         }
-        // Sélectionne le bouton pour l'année 2024 et le marque comme sélectionné et cliqué par défaut
-        const defaultYear = '2024';
+        // Sélectionne le bouton pour l'année 2025 et le marque comme sélectionné et cliqué par défaut
+        const defaultYear = '2025';
         const defaultYearButton = document.querySelector(`.year-button[data-year="${defaultYear}"]`);
         defaultYearButton.classList.add('selected', 'clicked');
         filterVideosByYear(defaultYear);
