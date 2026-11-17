@@ -502,7 +502,7 @@ body::before {
         <button class="year-button" data-year="2016">2016</button>
         <button class="year-button" data-year="2015">2015</button>
         <button class="year-button" data-year="2014">2014</button>
-        <button class="year-button" data-year="old">&lt; 2014</button>
+        <button class="year-button" data-year="old">Before Us</button>
     </nav>
 </div>
 
@@ -1079,7 +1079,7 @@ document.addEventListener("DOMContentLoaded", function () {
 },
 {
   old: true,
-  oldYear: "2000–2014",
+  oldYear: "2011–2014",
   link: "https://youtu.be/lBgBSuqW25k?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201403%20-%20Once%20upon%20a%20girl....jpg",
   title: "Once Uppon A Girl...",
@@ -1156,12 +1156,12 @@ document.addEventListener("DOMContentLoaded", function () {
   description: "Embark on this adventure with me!<br><br>",
 },
 {
-    old: true,
-    link: "https://youtu.be/WGwMd6VcFic?autoplay=1&rel=0&modestbranding=1",
-    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202206%20-%20My%20parents.jpg",
-    title: "Mes parents",
-    description: "A tribute to the people who shaped who I am."
-},
+  old: true,
+  link: "https://youtu.be/WGwMd6VcFic?autoplay=1&rel=0&modestbranding=1",
+  imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202206%20-%20My%20parents.jpg",
+  title: "Mes parents",
+  description: "A tribute to the people who shaped who I am."
+}
     ];
 
     const grid = document.getElementById("videoGrid");
@@ -1177,8 +1177,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ? videos.filter(v => v.old === true || (v.year >= 2008 && v.year <= 2013))
             : videos.filter(v => !v.old && v.year === Number(year));
 
-        // Order the old section exactly as requested:
-        // Once Uppon A Girl... first, 2008–2013 videos next, Mes parents last.
+        // Order: Once Uppon A Girl... first, 2008–2013 videos, Mes parents last.
         selected.sort((a, b) => {
             if (a.oldYear && !b.oldYear) return -1;
             if (!a.oldYear && b.oldYear) return 1;
@@ -1218,7 +1217,7 @@ document.addEventListener("DOMContentLoaded", function () {
         empty.style.display = selected.length ? "none" : "block";
         count.textContent = `${selected.length} video${selected.length > 1 ? "s" : ""}`;
         selectedYear.textContent = year === "old"
-            ? "Memories before 2014"
+            ? "Memories before us"
             : `Memories from ${year}`;
     }
 
