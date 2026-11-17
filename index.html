@@ -53,10 +53,10 @@ body::before {
 }
 
 .page {
-    width: calc(100% - 24px);
+    width: calc(100% - 16px);
     max-width: none;
     margin: 0 auto;
-    padding: 12px 0 35px;
+    padding: 22px 0 55px;
 }
 
 .hero {
@@ -72,7 +72,7 @@ body::before {
 .hero-image {
     display: block;
     width: 100%;
-    height: clamp(150px, 18vw, 360px);
+    height: 220px;
     object-fit: fill;
     border-radius: 30px;
 }
@@ -81,7 +81,7 @@ body::before {
     position: sticky;
     top: 12px;
     z-index: 20;
-    margin: 14px 0 20px;
+    margin: 22px 0 28px;
     padding: 13px 15px;
     border: 1px solid rgba(255,255,255,.8);
     border-radius: 20px;
@@ -309,30 +309,31 @@ body::before {
     object-fit: contain;
 }
 
-.fullscreen-page {
-    position: fixed;
-    right: 72px;
-    bottom: 18px;
-    width: 42px;
-    height: 42px;
-    border: 0;
-    border-radius: 50%;
-    background: rgba(23,32,51,.90);
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 1000;
-    display: grid;
-    place-items: center;
-    box-shadow: 0 8px 22px rgba(0,0,0,.20);
-}
-.fullscreen-page:hover {
-    transform: scale(1.06);
-}
-
 .close-page:hover {
     transform: scale(1.08);
     background: #ef4444;
+}
+
+.fullscreen-page {
+    position: fixed;
+    right: 76px;
+    bottom: 18px;
+    z-index: 50;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(17,24,39,.86);
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 900;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 22px rgba(0,0,0,.2);
+}
+.fullscreen-page:hover {
+    transform: scale(1.08);
 }
 
 .mascot {
@@ -368,6 +369,7 @@ body::before {
 @media (max-width: 1200px) {
     .hero-image {
         width: 100%;
+        height: 190px;
     }
     .video-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -387,6 +389,9 @@ body::before {
 }
 
 @media (max-width: 600px) {
+    .hero-image {
+        height: 125px;
+    }
     .page {
         width: min(100% - 18px, 520px);
         padding-top: 9px;
@@ -394,10 +399,6 @@ body::before {
     .hero,
     .hero-image {
         border-radius: 24px;
-    }
-    .hero-image {
-        height: 150px;
-        object-fit: fill;
     }
     .toolbar {
         top: 6px;
@@ -498,7 +499,7 @@ body::before {
 </div>
 
 <button class="close-page" aria-label="Close page" title="Close"><img src="Icons/exit-door.png" alt="Close"></button>
-<button class="fullscreen-page" aria-label="Fullscreen" title="Fullscreen">⛶</button>
+<button class="fullscreen-page" id="fullscreenBtn" aria-label="Fullscreen" title="Fullscreen">⛶</button>
 
 <div class="mascot mascot-left">
     <img src="https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/LMascot.png" alt="">
@@ -510,13 +511,13 @@ body::before {
 <script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js?v=20261117-4').catch(() => {});
+        navigator.serviceWorker.register('service-worker.js?v=20261117-5').catch(() => {});
     });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const fullscreenBtn = document.querySelector(".fullscreen-page");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
     if (fullscreenBtn) {
         fullscreenBtn.addEventListener("click", async () => {
             try {
