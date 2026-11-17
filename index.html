@@ -502,7 +502,7 @@ body::before {
         <button class="year-button" data-year="2016">2016</button>
         <button class="year-button" data-year="2015">2015</button>
         <button class="year-button" data-year="2014">2014</button>
-        <button class="year-button" data-year="old">Before Us</button>
+        <button class="year-button" data-year="old">< US</button>
     </nav>
 </div>
 
@@ -1217,7 +1217,7 @@ document.addEventListener("DOMContentLoaded", function () {
         empty.style.display = selected.length ? "none" : "block";
         count.textContent = `${selected.length} video${selected.length > 1 ? "s" : ""}`;
         selectedYear.textContent = year === "old"
-            ? "Memories before Us"
+            ? "Memories < US"
             : `Memories from ${year}`;
     }
 
