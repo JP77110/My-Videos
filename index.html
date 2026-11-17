@@ -53,7 +53,8 @@ body::before {
 }
 
 .page {
-    width: min(1500px, calc(100% - 32px));
+    width: calc(100% - 32px);
+    max-width: none;
     margin: 0 auto;
     padding: 22px 0 55px;
 }
@@ -149,6 +150,7 @@ body::before {
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 18px;
+    width: 100%;
 }
 
 .video-card {
@@ -448,7 +450,7 @@ body::before {
         <button class="year-button" data-year="2016">2016</button>
         <button class="year-button" data-year="2015">2015</button>
         <button class="year-button" data-year="2014">2014</button>
-        <button class="year-button" data-year="old">Before Us</button>
+        <button class="year-button" data-year="old">< US</button>
     </nav>
 </div>
 
@@ -1163,7 +1165,7 @@ document.addEventListener("DOMContentLoaded", function () {
         empty.style.display = selected.length ? "none" : "block";
         count.textContent = `${selected.length} video${selected.length > 1 ? "s" : ""}`;
         selectedYear.textContent = year === "old"
-            ? "Memories before Us"
+            ? "Memories before US"
             : `Memories from ${year}`;
     }
 
