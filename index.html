@@ -53,7 +53,7 @@ body::before {
 }
 
 .page {
-    width: min(1500px, calc(100% - 32px));
+    width: min(1800px, calc(100% - 24px));
     margin: 0 auto;
     padding: 22px 0 55px;
 }
@@ -147,8 +147,8 @@ body::before {
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .video-card {
@@ -332,15 +332,21 @@ body::before {
     to { opacity: 1; transform: translateY(0); }
 }
 
+@media (max-width: 1250px) {
+    .video-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 15px;
+    }
+}
+
 @media (max-width: 900px) {
     .hero-image {
         width: 100%;
     }
     .video-grid {
-        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 15px;
     }
-    .mascot img { width: 65px; }
 }
 
 @media (max-width: 600px) {
@@ -392,9 +398,6 @@ body::before {
         border-top-width: 8px;
         border-bottom-width: 8px;
     }
-    .mascot {
-        display: none;
-    }
     .close-page {
         width: 42px;
         height: 42px;
@@ -433,7 +436,7 @@ body::before {
         <button class="year-button" data-year="2016">2016</button>
         <button class="year-button" data-year="2015">2015</button>
         <button class="year-button" data-year="2014">2014</button>
-        <button class="year-button" data-year="old">< US</button>
+        <button class="year-button" data-year="old">&lt; US</button>
     </nav>
 </div>
 
@@ -452,12 +455,6 @@ body::before {
 
 <button class="close-page" aria-label="Close page" title="Close">×</button>
 
-<div class="mascot mascot-left">
-    <img src="https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/LMascot.png" alt="">
-</div>
-<div class="mascot mascot-right">
-    <img src="https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/RMascot.png" alt="">
-</div>
 
 <script>
 if ('serviceWorker' in navigator) {
@@ -1148,7 +1145,7 @@ document.addEventListener("DOMContentLoaded", function () {
         empty.style.display = selected.length ? "none" : "block";
         count.textContent = `${selected.length} video${selected.length > 1 ? "s" : ""}`;
         selectedYear.textContent = year === "old"
-            ? "Memories Before < US"
+            ? "Memories before Us"
             : `Memories from ${year}`;
     }
 
