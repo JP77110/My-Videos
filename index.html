@@ -61,73 +61,18 @@ body::before {
 .hero {
     position: relative;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 110px 1fr 110px;
-    align-items: center;
-    gap: 20px;
-    min-height: 190px;
-    padding: 28px 38px;
-    border: 1px solid rgba(255,255,255,.75);
+    padding: 0;
+    border: 0;
     border-radius: 30px;
-    background:
-        linear-gradient(135deg, rgba(255,255,255,.94), rgba(255,255,255,.70)),
-        linear-gradient(120deg, #ffd1dc, #91eae4);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(12px);
+    background: transparent;
+    box-shadow: none;
 }
 
-.hero::after {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    right: -100px;
-    top: -150px;
-    border-radius: 50%;
-    background: rgba(108,99,255,.14);
-}
-
-.hero-logo {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    justify-self: center;
-    filter: drop-shadow(0 8px 10px rgba(0,0,0,.12));
-    transition: transform .3s ease;
-}
-
-.hero-logo:hover {
-    transform: translateY(-4px) rotate(3deg) scale(1.04);
-}
-
-.hero-center {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-}
-
-.hero-title {
-    margin: 0;
-    font-size: clamp(2rem, 4vw, 3.6rem);
-    font-weight: 900;
-    letter-spacing: -.04em;
-    line-height: 1;
-}
-
-.hero-script {
-    margin: 8px 0 5px;
-    font-family: 'Pacifico', cursive;
-    font-size: clamp(1.2rem, 2.5vw, 2rem);
-    color: var(--accent);
-}
-
-.hero-subtitle {
-    margin: 0;
-    color: var(--muted);
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    font-size: .78rem;
+.hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
 }
 
 .toolbar {
@@ -274,6 +219,9 @@ body::before {
 
 .video-info {
     padding: 15px 16px 16px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
 }
 
 .video-title {
@@ -285,18 +233,23 @@ body::before {
 }
 
 .video-description {
-    min-height: 42px;
+    flex: 1;
+    min-height: 0;
     color: var(--muted);
     font-size: .82rem;
     line-height: 1.45;
+    display: flex;
+    flex-direction: column;
 }
 
 .centered-squares {
-    margin-top: 9px;
-    color: #b9c0cc;
-    font-size: .58rem;
-    letter-spacing: 4px;
-    text-align: center;
+    width: 34px;
+    height: 2px;
+    margin: auto auto 0;
+    flex: 0 0 2px;
+    background: #d8dde3;
+    font-size: 0;
+    letter-spacing: 0;
 }
 
 .year-badge {
@@ -380,12 +333,9 @@ body::before {
 }
 
 @media (max-width: 900px) {
-    .hero {
-        grid-template-columns: 80px 1fr 80px;
-        padding: 22px;
-        min-height: 150px;
+    .hero-image {
+        width: 100%;
     }
-    .hero-logo { width: 72px; height: 72px; }
     .video-grid {
         grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
         gap: 15px;
@@ -398,20 +348,9 @@ body::before {
         width: min(100% - 18px, 520px);
         padding-top: 9px;
     }
-    .hero {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding: 22px 16px;
+    .hero,
+    .hero-image {
         border-radius: 24px;
-    }
-    .hero-logo {
-        display: none;
-    }
-    .hero-title {
-        font-size: 2rem;
-    }
-    .hero-script {
-        font-size: 1.35rem;
     }
     .toolbar {
         top: 6px;
@@ -436,13 +375,13 @@ body::before {
     }
     .video-info {
         padding: 11px;
+        height: 118px;
     }
     .video-title {
         font-size: .88rem;
     }
     .video-description {
         font-size: .72rem;
-        min-height: 38px;
     }
     .play {
         width: 44px;
@@ -476,15 +415,7 @@ body::before {
 <div class="page">
 
 <header class="hero">
-    <img src="https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/logo.png"
-         alt="Logo" class="hero-logo">
-    <div class="hero-center">
-        <h1 class="hero-title">Tear, JP & Tearna</h1>
-        <div class="hero-script">Awesome Adventures!</div>
-        <p class="hero-subtitle">Our memories • Our family • Our story</p>
-    </div>
-    <img src="https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/logo.png"
-         alt="Logo" class="hero-logo">
+    <img src="Icons/header.png" alt="Tear, JP & Tearna — Awesome Adventures" class="hero-image">
 </header>
 
 <div class="toolbar">
@@ -502,7 +433,7 @@ body::before {
         <button class="year-button" data-year="2016">2016</button>
         <button class="year-button" data-year="2015">2015</button>
         <button class="year-button" data-year="2014">2014</button>
-        <button class="year-button" data-year="old">< US</button>
+        <button class="year-button" data-year="old">Before Us</button>
     </nav>
 </div>
 
@@ -1207,7 +1138,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h3 class="video-title">${video.title}</h3>
                     <div class="video-description">
                         ${video.description}
-                        <div class="centered-squares">● ● ●</div>
+                        <div class="centered-squares"></div>
                     </div>
                 </div>
             `;
@@ -1217,7 +1148,7 @@ document.addEventListener("DOMContentLoaded", function () {
         empty.style.display = selected.length ? "none" : "block";
         count.textContent = `${selected.length} video${selected.length > 1 ? "s" : ""}`;
         selectedYear.textContent = year === "old"
-            ? "Memories < US"
+            ? "Memories before Us"
             : `Memories from ${year}`;
     }
 
