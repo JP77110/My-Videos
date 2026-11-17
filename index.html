@@ -343,18 +343,22 @@ body::before {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .hero-image {
         width: 100%;
     }
     .video-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 15px;
     }
     .mascot img { width: 65px; }
 }
 
 @media (max-width: 900px) {
+    .page {
+        width: calc(100% - 24px);
+        max-width: 900px;
+    }
     .video-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -450,7 +454,7 @@ body::before {
         <button class="year-button" data-year="2016">2016</button>
         <button class="year-button" data-year="2015">2015</button>
         <button class="year-button" data-year="2014">2014</button>
-        <button class="year-button" data-year="old">< US</button>
+        <button class="year-button" data-year="old">Before Us</button>
     </nav>
 </div>
 
@@ -479,7 +483,7 @@ body::before {
 <script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js').catch(() => {});
+        navigator.serviceWorker.register('service-worker.js?v=20261117-2').catch(() => {});
     });
 }
 
@@ -1165,7 +1169,7 @@ document.addEventListener("DOMContentLoaded", function () {
         empty.style.display = selected.length ? "none" : "block";
         count.textContent = `${selected.length} video${selected.length > 1 ? "s" : ""}`;
         selectedYear.textContent = year === "old"
-            ? "Memories before US"
+            ? "Memories before Us"
             : `Memories from ${year}`;
     }
 
