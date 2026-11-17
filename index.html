@@ -147,8 +147,8 @@ body::before {
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 18px;
 }
 
 .video-card {
@@ -341,15 +341,21 @@ body::before {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .hero-image {
         width: 100%;
     }
     .video-grid {
-        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 15px;
     }
     .mascot img { width: 65px; }
+}
+
+@media (max-width: 900px) {
+    .video-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 600px) {
