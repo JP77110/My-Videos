@@ -177,7 +177,7 @@ body::before {
     box-shadow: 0 7px 18px rgba(255,107,53,.27);
 }
 
-.year-button[data-year="2008-2013"] {
+.year-button[data-year="old"] {
     min-width: 78px;
 }
 
@@ -502,7 +502,7 @@ body::before {
         <button class="year-button" data-year="2016">2016</button>
         <button class="year-button" data-year="2015">2015</button>
         <button class="year-button" data-year="2014">2014</button>
-        <button class="year-button" data-year="2008-2013">&lt; 2014</button>
+        <button class="year-button" data-year="old">&lt; 2014</button>
     </nav>
 </div>
 
@@ -902,13 +902,7 @@ document.addEventListener("DOMContentLoaded", function () {
     title: "My Two Loves",
     description: "They are the heart and soul of my life."
 },
-{
-    year: 2022,
-    link: "https://youtu.be/WGwMd6VcFic?autoplay=1&rel=0&modestbranding=1",
-    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202206%20-%20My%20parents.jpg",
-    title: "My Parents",
-    description: "A tribute to the people who shaped who I am."
-},
+
 {
     year: 2022,
     link: "https://youtu.be/vVGigFIzmb4?autoplay=1&rel=0&modestbranding=1",
@@ -1071,7 +1065,8 @@ document.addEventListener("DOMContentLoaded", function () {
   description: "With you, every day feels like a sunny day.",
 },
 {
-  year: 2014,
+  old: true,
+  oldYear: "2000–2014",
   link: "https://youtu.be/lBgBSuqW25k?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201403%20-%20Once%20upon%20a%20girl....jpg",
   title: "Once Uppon A Girl...",
@@ -1090,6 +1085,13 @@ document.addEventListener("DOMContentLoaded", function () {
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201401%20-%20Me%20in%20Hua%20Hin.jpg",
   title: "Me In Hua Hin",
   description: "Exploring Hua Hin, from its beaches to markets.",
+},
+{
+  old: true,
+  link: "https://youtu.be/WGwMd6VcFic?autoplay=1&rel=0&modestbranding=1",
+  imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202206%20-%20My%20parents.jpg",
+  title: "Mes parents",
+  description: "A tribute to the people who shaped who I am."
 },
 {
   year: 2013,
@@ -1172,18 +1174,28 @@ document.addEventListener("DOMContentLoaded", function () {
     function render(year) {
         grid.innerHTML = "";
 
-        const selected = year === "2008-2013"
-            ? videos.filter(v => v.year >= 2008 && v.year <= 2013)
-            : videos.filter(v => v.year === Number(year));
+        const selected = year === "old"
+            ? videos.filter(v => v.old === true || (v.year >= 2008 && v.year <= 2013))
+            : videos.filter(v => !v.old && v.year === Number(year));
+
+        selected.sort((a, b) => {
+            if (a.oldYear && !b.oldYear) return -1;
+            if (!a.oldYear && b.oldYear) return 1;
+            if (a.old && b.old && !a.year && b.year) return 1;
+            if (a.old && b.old && a.year && !b.year) return -1;
+            return 0;
+        });
 
         selected.forEach((video, index) => {
             const card = document.createElement("article");
             card.className = "video-card";
             card.style.animationDelay = `${Math.min(index * 35, 300)}ms`;
 
-            const oldYear = video.year >= 2008 && video.year <= 2013
-                ? `<span class="year-badge">${video.year}</span>`
-                : "";
+            const oldYear = video.oldYear
+                ? `<span class="year-badge">${video.oldYear}</span>`
+                : (video.year >= 2008 && video.year <= 2013
+                    ? `<span class="year-badge">${video.year}</span>`
+                    : "");
 
             card.innerHTML = `
                 <a class="video-link" href="${video.link}" target="_blank" rel="noopener">
@@ -1204,8 +1216,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         empty.style.display = selected.length ? "none" : "block";
         count.textContent = `${selected.length} video${selected.length > 1 ? "s" : ""}`;
-        selectedYear.textContent = year === "2008-2013"
-            ? "Memories from 2008–2013"
+        selectedYear.textContent = year === "old"
+            ? "Memories from before 2014"
             : `Memories from ${year}`;
     }
 
