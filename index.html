@@ -1154,7 +1154,7 @@ document.addEventListener("DOMContentLoaded", function () {
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/2008%20-%20Me%20in%20China.jpg",
   title: "Me In China",
   description: "Embark on this adventure with me!<br><br>",
-}
+},
 {
     old: true,
     link: "https://youtu.be/WGwMd6VcFic?autoplay=1&rel=0&modestbranding=1",
@@ -1177,11 +1177,13 @@ document.addEventListener("DOMContentLoaded", function () {
             ? videos.filter(v => v.old === true || (v.year >= 2008 && v.year <= 2013))
             : videos.filter(v => !v.old && v.year === Number(year));
 
+        // Order the old section exactly as requested:
+        // Once Uppon A Girl... first, 2008–2013 videos next, Mes parents last.
         selected.sort((a, b) => {
             if (a.oldYear && !b.oldYear) return -1;
             if (!a.oldYear && b.oldYear) return 1;
-            if (a.old && b.old && !a.year && b.year) return 1;
-            if (a.old && b.old && a.year && !b.year) return -1;
+            if (a.old && !a.year && b.year) return 1;
+            if (a.year && !b.year) return -1;
             return 0;
         });
 
@@ -1192,7 +1194,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const oldYear = video.oldYear
                 ? `<span class="year-badge">${video.oldYear}</span>`
-                : (video.year >= 2008 && video.year <= 2013 ? `<span class="year-badge">${video.year}</span>` : "");
+                : (video.year >= 2008 && video.year <= 2013
+                    ? `<span class="year-badge">${video.year}</span>`
+                    : "");
 
             card.innerHTML = `
                 <a class="video-link" href="${video.link}" target="_blank" rel="noopener">
@@ -1214,7 +1218,7 @@ document.addEventListener("DOMContentLoaded", function () {
         empty.style.display = selected.length ? "none" : "block";
         count.textContent = `${selected.length} video${selected.length > 1 ? "s" : ""}`;
         selectedYear.textContent = year === "old"
-            ? "Memories from before 2014"
+            ? "Memories before 2014"
             : `Memories from ${year}`;
     }
 
