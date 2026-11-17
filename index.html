@@ -56,7 +56,7 @@ body::before {
     width: calc(100% - 32px);
     max-width: none;
     margin: 0 auto;
-    padding: 22px 0 55px;
+    padding: 12px 0 28px;
 }
 
 .hero {
@@ -72,7 +72,7 @@ body::before {
 .hero-image {
     display: block;
     width: 100%;
-    height: 255px;
+    height: 155px;
     object-fit: cover;
     object-position: center;
     border-radius: 30px;
@@ -150,7 +150,7 @@ body::before {
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
     gap: 18px;
     width: 100%;
 }
@@ -493,7 +493,7 @@ body::before {
 <script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js?v=20261117-2').catch(() => {});
+        navigator.serviceWorker.register('service-worker.js?v=20261117-3').catch(() => {});
     });
 }
 
