@@ -902,7 +902,6 @@ document.addEventListener("DOMContentLoaded", function () {
     title: "My Two Loves",
     description: "They are the heart and soul of my life."
 },
-
 {
     year: 2022,
     link: "https://youtu.be/vVGigFIzmb4?autoplay=1&rel=0&modestbranding=1",
@@ -1065,14 +1064,6 @@ document.addEventListener("DOMContentLoaded", function () {
   description: "With you, every day feels like a sunny day.",
 },
 {
-  old: true,
-  oldYear: "2000–2014",
-  link: "https://youtu.be/lBgBSuqW25k?autoplay=1&rel=0&modestbranding=1",
-  imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201403%20-%20Once%20upon%20a%20girl....jpg",
-  title: "Once Uppon A Girl...",
-  description: "Discover the moments that shaped Tear's destiny.",
-},
-{
   year: 2014,
   link: "https://youtu.be/vERvvBlloUI?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201402%20-%20You%20&%20I.jpg",
@@ -1088,10 +1079,11 @@ document.addEventListener("DOMContentLoaded", function () {
 },
 {
   old: true,
-  link: "https://youtu.be/WGwMd6VcFic?autoplay=1&rel=0&modestbranding=1",
-  imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202206%20-%20My%20parents.jpg",
-  title: "Mes parents",
-  description: "A tribute to the people who shaped who I am."
+  oldYear: "2000–2014",
+  link: "https://youtu.be/lBgBSuqW25k?autoplay=1&rel=0&modestbranding=1",
+  imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201403%20-%20Once%20upon%20a%20girl....jpg",
+  title: "Once Uppon A Girl...",
+  description: "Discover the moments that shaped Tear's destiny.",
 },
 {
   year: 2013,
@@ -1163,6 +1155,13 @@ document.addEventListener("DOMContentLoaded", function () {
   title: "Me In China",
   description: "Embark on this adventure with me!<br><br>",
 }
+{
+    old: true,
+    link: "https://youtu.be/WGwMd6VcFic?autoplay=1&rel=0&modestbranding=1",
+    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202206%20-%20My%20parents.jpg",
+    title: "Mes parents",
+    description: "A tribute to the people who shaped who I am."
+},
     ];
 
     const grid = document.getElementById("videoGrid");
@@ -1193,9 +1192,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const oldYear = video.oldYear
                 ? `<span class="year-badge">${video.oldYear}</span>`
-                : (video.year >= 2008 && video.year <= 2013
-                    ? `<span class="year-badge">${video.year}</span>`
-                    : "");
+                : (video.year >= 2008 && video.year <= 2013 ? `<span class="year-badge">${video.year}</span>` : "");
 
             card.innerHTML = `
                 <a class="video-link" href="${video.link}" target="_blank" rel="noopener">
