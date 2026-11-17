@@ -72,7 +72,9 @@ body::before {
 .hero-image {
     display: block;
     width: 100%;
-    height: auto;
+    height: 255px;
+    object-fit: cover;
+    object-position: center;
     border-radius: 30px;
 }
 
@@ -355,6 +357,9 @@ body::before {
 }
 
 @media (max-width: 900px) {
+    .hero-image {
+        height: 210px;
+    }
     .page {
         width: calc(100% - 24px);
         max-width: 900px;
@@ -372,6 +377,11 @@ body::before {
     .hero,
     .hero-image {
         border-radius: 24px;
+    }
+    .hero-image {
+        height: 150px;
+        object-fit: cover;
+        object-position: center;
     }
     .toolbar {
         top: 6px;
