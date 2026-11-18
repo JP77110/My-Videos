@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#111827">
 <link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-512.png">
 <title>Tear, JP & Tearna — Awesome Adventures</title>
 
 <style>
@@ -70,8 +72,8 @@ body::before {
 .hero-image {
     display: block;
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 220px;
+    object-fit: fill;
     border-radius: 30px;
 }
 
@@ -225,6 +227,22 @@ body::before {
     flex-direction: column;
 }
 
+.country-icon {
+    width: 24px;
+    height: 16px;
+    object-fit: fill;
+    flex: 0 0 24px;
+    display: block;
+    margin-right: 7px;
+}
+
+.video-title-row {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    margin: 0 0 7px;
+}
+
 .video-title {
     margin: 0 0 7px;
     color: var(--text);
@@ -367,7 +385,7 @@ body::before {
 @media (max-width: 1200px) {
     .hero-image {
         width: 100%;
-        height: auto;
+        height: 190px;
     }
     .video-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -388,7 +406,7 @@ body::before {
 
 @media (max-width: 600px) {
     .hero-image {
-        height: auto;
+        height: 125px;
     }
     .page {
         width: min(100% - 18px, 520px);
@@ -529,6 +547,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/CqZEAgd60Vg?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202614%20-%20Halloween.jpg",
     title: "Halloween",
+    country: "TH",
     description: "Spooky Bintabaht. A Night at Drink & Shelter."
 },         
  {
@@ -536,6 +555,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/3-TVgzi6VkI?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202613%20-%20Mam%C3%A9.jpg",
     title: "Mamé",
+    country: "FR",
     description: "A Jamais Dans Nos Cœurs. 11/01/1930 - 17/10/2026"
 },              
  {
@@ -543,6 +563,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/kRsGO8WOH8M?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202612%20-%20%20August%20Memories.jpg",
     title: "August Memories",
+    country: "TH",
     description: "The Month Of All Dangers."
 },              
 {
@@ -550,6 +571,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/5vrFD3fGfK0?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202611%20-%20First%20Semester%20-%20More%20Photos.jpg",
     title: "First Semester",
+    country: "TH",
     description: "More Photos."
 },    
 {
@@ -557,6 +579,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/Ion5lgfHu4c?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202609%20-%20Colorful%20Memories.jpg",
     title: "Colorful Memories",
+    country: "TH",
     description: "Oops... Too Cute Again."
 },    
 {
@@ -564,6 +587,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/oRq6DdMx2vs?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202603%20-%20Nayang%20Bat%20Cave%20&%20At%20our%20Friends%20Lek%20&%20Dennis's.jpg",
     title: "Bat Cave & Seven Eleven",
+    country: "TH",
     description: "Nayang Bat Cave & At Lek & Dennis's."
 },               
 {
@@ -571,6 +595,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/bBfwg0WsoZw?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202602%20-%20Songkran.jpg",
     title: "Songkran",
+    country: "TH",
     description: "Thailand's epic water festival."
 },                 
  {
@@ -578,6 +603,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/27HufonJFlI?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202601%20-%20Les%20Sam%C3%A9riens%20en%20folie.jpg",
     title: "Les Samériens en Folie",
+    country: "TH",
     description: "Trois, jours, c'est court."
 },     
  {
@@ -585,6 +611,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/9rygzZv3BHY?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202507%20-%20Fourth%20Quarter.jpg",
     title: "Fourth Quarter",
+    country: "TH",
     description: "Love, laughter, and time spent together."
 },                       
  {
@@ -592,6 +619,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/f8jKD4mSoQ4?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202506%20-%20My%20Little%20Star.jpg",
     title: "My Little Star",
+    country: "TH",
     description: "You’re my everything, my little sunshine."
 },            
 {
@@ -599,6 +627,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/3RP8F-dbiL0?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202505%20-%20Mon%20Amour.jpg",
     title: "ที่รัก",
+    country: "TH",
     description: "ขอบคุณที่อยู่ข้างฉันเสมอ ฉันรักเธอนะ ที่รัก"
 },            
  {
@@ -606,6 +635,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/s4fW92sQePs?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202504%20-%20Third%20Quarter.jpg",
     title: "Third Quarter",
+    country: "TH",
     description: "Forever bound, one family, one heart..."
 },
  {
@@ -613,6 +643,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/_Ipg3S4NMeA?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202503%20-%20Second%20Quarter.jpg",
     title: "Second Quarter",
+    country: "TH",
     description: "A look back at April through June."
 },
  {
@@ -620,6 +651,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/-smplq4KGgM?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202502%20-%20Songkran.jpg",
     title: "Songkran",
+    country: "TH",
     description: "Thai New Year water celebrations."
 },
 {
@@ -627,6 +659,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/ccy0I9VaqUM?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202501%20-%20First%20Quarter.jpg",
     title: "First Quarter",
+    country: "TH",
     description: "The Angel and the Devils.",
 },
             {
@@ -634,6 +667,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/jUoccXa9Wrs?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202417%20-%204th%20Quarter.jpg",
     title: "The 4th Quarter",
+    country: "TH",
     description: "A jumble of photos.",
 },
 {
@@ -641,6 +675,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/NVxPYCGtesQ?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202416%20-%20The%20Holiday%20Season.jpg",
     title: "The Holyday Season",
+    country: "TH",
     description: "Joyful celebrations, family gatherings, and gifts.",
 },
 {
@@ -648,6 +683,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/tdfL42EnHQs?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202415%20-%20Loy%20Krathong.jpg",
     title: "Loy Krathong",
+    country: "TH",
     description: "Thai festival floating lights.",
 },
 {
@@ -655,6 +691,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/uv6JSxUdQs0?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202414%20-%20Halloween.jpg",
     title: "Halloween",
+    country: "TH",
     description: "Costumes, spooky decorations and fun.",
 },
 {
@@ -662,6 +699,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/lRjMkk7DUec?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202413%20-%20My%20Beautiful%20Wife.jpg",
     title: "My Beautiful Wife",
+    country: "TH",
     description: "For ever and a day.",
 },
 {
@@ -669,6 +707,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/StkOCIboXdk?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202412%20-%20My%20Baby%20Love.jpg",
     title: "My Baby Love",
+    country: "TH",
     description: "Already 8 years.",
 },
 {
@@ -676,6 +715,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/3iQy3e6g-5o?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202411%20-%20Ten%20Years%20Together.jpg",
     title: "Ten Years Together",
+    country: "TH",
     description: "11 photos for 10 years.",
 },
 {
@@ -683,6 +723,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/TPb_AZ1n2K0?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202410%20-%20Third%20Quarter.jpg",
     title: "Third Quarter",
+    country: "TH",
     description: "Photo collection from July to September.",
 },
 {
@@ -690,6 +731,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/olhRRBQRC-I?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202409%20-%20My%20love%202.jpg",
     title: "My Love 2",
+    country: "TH",
     description: "My wife, my greatest life chapter.",
 },
 {
@@ -697,6 +739,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/X1rZYcIEQHY?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202408%20-%20August%2C%20the%20wallet's%20enemy.jpg",
     title: "August: The Wallet’s Enemy",
+    country: "TH",
     description: "When your wallet begs for mercy.",
 },
 {
@@ -704,6 +747,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/F9IHYrtbkq8?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202407%20-%20I'm%208%20years%20old.jpg",
     title: "I'm 8 Years Old",
+    country: "TH",
     description: "Being 8 is fun and full of surprises!",
 },
 {
@@ -711,6 +755,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/8YtnATG4HkQ?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202406%20-%20Time%20light%20charmless.jpg",
     title: "Time Light Charmless",
+    country: "TH",
     description: "A stunning display of lights and sounds.",
 },
 {
@@ -718,6 +763,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/2JgV6Qnwz78?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202405%20-%20Second%20quarter.jpg",
     title: "Second Quarter",
+    country: "TH",
     description: "Photo collection from April to June.",
 },
 {
@@ -725,6 +771,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/gKpkllnuU-A?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202404%20-%20My%20two%20loves.jpg",
     title: "My Two Loves",
+    country: "TH",
     description: "A collection of cherished family moments.",
 },
 {
@@ -732,6 +779,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/MVs4st_vrRU?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202403%20-%20Songkran.jpg",
     title: "Songkran",
+    country: "TH",
     description: "Water fights and joyful celebrations!",
 },
 {
@@ -739,6 +787,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/vu_-8c6xZSE?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202402%20-%20First%20quarter.jpg",
     title: "First Quarter",
+    country: "TH",
     description: "A dazzling memory collection."
 },
 {
@@ -746,6 +795,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/jypJyLYZGV8?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202401%20-%20Rabbits%20&%20Elephants.jpg",
     title: "Rabbits & Elephants",
+    country: "TH",
     description: "A charming tale of Rabbits & Elephants."
 },
             {
@@ -753,6 +803,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/oRJaqTWkfqY?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202317%20-%20Christmas.jpg",
     title: "Christmas",
+    country: "TH",
     description: "Experience the magic of Christmas moments!"
 },
 {
@@ -760,6 +811,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/Z65FZ5c6tys?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202316%20-%20Fourth%20quarter.jpg",
     title: "Fourth Quarter",
+    country: "TH",
     description: "Discover a compilation of the 4th quarter."
 },
 {
@@ -767,6 +819,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/FPQ_GVZxVAc?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202315%20-%20G.I.%20Tearna.jpg",
     title: "G.I. Tearna",
+    country: "TH",
     description: "Scout obstacle course for adventurers."
 },
 {
@@ -774,6 +827,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/mNoHp1UkJYw?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202314%20-%20Halloween.jpg",
     title: "Halloween",
+    country: "TH",
     description: "Get ready for a spine-chilling adventure!"
 },
 {
@@ -781,6 +835,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/SQgwUeNCyZ8?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202313%20-%20Third%20quarter.jpg",
     title: "Third Quarter",
+    country: "TH",
     description: "• Highlights from the 3rd quarter."
 },
 {
@@ -788,6 +843,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/L3Kpv3oGL9M?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202312%20-%20P.1%20-%20First%20half.jpg",
     title: "P.1. - First Half",
+    country: "TH",
     description: "Learning through fun activities."
 },
 {
@@ -795,6 +851,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/BYOp1ORHlYY?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202311%20-%20My%20friend%20Cherie.jpg",
     title: "My Friend Cherie",
+    country: "TH",
     description: "Heartwarming times with my friend."
 },
 {
@@ -802,6 +859,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/bdult9pWbks?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202310%20-%20Beautiful%20girls.jpg",
     title: "Beautiful Girls",
+    country: "TH",
     description: "My wife, daughter, and amazing friends."
 },
 {
@@ -809,6 +867,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/veMzJxMYMYE?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202309%20-%20Enjoying%20swimming%20pool.jpg",
     title: "Enjoying Swimming Pool",
+    country: "TH",
     description: "Relaxing and having fun poolside."
 },
 {
@@ -816,6 +875,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/qT3dZoQ3P5Q?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202308-%20Second%20quarter.jpg",
     title: "Second Quarter",
+    country: "TH",
     description: "Fun moments, and everyday adventures."
 },
 {
@@ -823,6 +883,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/KKlybQ-LG8Q?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202307%20-%20June%20outings.jpg",
     title: "June Outings",
+    country: "TH",
     description: "Unforgettable, fun-filled moments."
 },
 {
@@ -830,6 +891,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/QcSeu_kf_mQ?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202306%20-%20School%20clothes.jpg",
     title: "School Clothes",
+    country: "TH",
     description: "Stylish outfits for everyday school."
 },
 {
@@ -837,6 +899,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/wSMpu2kr2RY?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202305%20-%20Kaeng%20Krachan.jpg",
     title: "Kaeng Krachan",
+    country: "TH",
     description: "River drifting adventure with life vests."
 },
 {
@@ -844,6 +907,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/vihhRvjaJwQ?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202304%20-%20First%20quarter.jpg",
     title: "First Quarter",
+    country: "TH",
     description: "Relive the highlights of our exciting 1st quarter!"
 },
 {
@@ -851,6 +915,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/8t21jCvYrxo?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202303%20-%20Tearna%20Graduation%20ceremony.jpg",
     title: "Graduation Ceremony",
+    country: "TH",
     description: "Celebrating Tearna's amazing graduation."
 },
 {
@@ -858,6 +923,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/lg5eXQKMwLc?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202302%20-%20Songkran%20in%20Hua%20Hin.jpg",
     title: "Songkran In Hua Hin",
+    country: "TH",
     description: "Splashing fun at Hua Hin Songkran."
 },
 {
@@ -865,6 +931,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/Xt6OHkKcxGk?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202301%20-%20Wedding%20Kingkhun%20&%20Dietmar.jpg",
     title: "Wedding Kingkhun-Dietmar",
+    country: "TH",
     description: "For the best or for the worst!",
 },
 {
@@ -872,6 +939,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/GenrCi4cfbU?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202209%20-%20Others%20photos.jpg",
     title: "Other Photos",
+    country: "TH",
     description: "A colorful potpourri of cherished memories."
 },
 {
@@ -879,6 +947,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/8j3vDJosPg8?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202208%20-%20Tearna%20Anuban%203.jpg",
     title: "Tearna Anuban 3",
+    country: "TH",
     description: "Tearna's joyful school year journey."
 },
 {
@@ -886,6 +955,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/ZhLxoXU_u3s?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202207%20-%20My%20two%20loves.jpg",
     title: "My Two Loves",
+    country: "TH",
     description: "They are the heart and soul of my life."
 },
 {
@@ -893,6 +963,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/vVGigFIzmb4?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202205%20-%20My%20love.jpg",
     title: "My Love",
+    country: "TH",
     description: "My greatest encounter, deepest joy."
 },
 {
@@ -900,6 +971,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/lMue2XRQIGA?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202204%20-%20Tearna%20Sport's%20days.jpg",
     title: "Tearna Sport's Days",
+    country: "TH",
     description: "Energetic, fun school sports days."
 },
 {
@@ -907,6 +979,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/_eZBwhMW0r8?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202203%20-%20Halloween.jpg",
     title: "Halloween",
+    country: "TH",
     description: "• Joyful scares and Halloween costumes."
 },
 {
@@ -914,6 +987,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/Q8LZ3o0Yji4?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202202%20-%20Mother's%20day.jpg",
     title: "Mother's Day",
+    country: "TH",
     description: "Heartfelt maternal love celebration."
 },
 {
@@ -921,6 +995,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/zp0ETlqTZ1o?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202201%20-%20Our%20cats.jpg",
     title: "Our Cats",
+    country: "TH",
     description: "Candid moments with furry friends."
 },
             {
@@ -928,6 +1003,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/ljvj8YOXMsk?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202102%20-%20100%20photos%20for%201%20year.jpg",
     title: "100 Photos For 1 Year",
+    country: "TH",
     description: "100 moments of a beautiful year."
 },
 {
@@ -935,6 +1011,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/10fwXUV1IcE?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202101%20-%20Tearna%20Anuban%202.jpg",
     title: "Tearna Anuban 2",
+    country: "TH",
     description: "Growing and shining: Year two."
 },
 {
@@ -942,6 +1019,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link: "https://youtu.be/BZKux1B5HM4?autoplay=1&rel=0&modestbranding=1",
     imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202002%20-%20202%20photos%20for%201%20year.jpg",
     title: "202 Photos For 1 Year",
+    country: "TH",
     description: "Love, laughter, adventures: our full year.",
 },
 {
@@ -949,6 +1027,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/q_FrLLeNzaA?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202001%20-%20Tearna%20Anuban%201.jpg",
    title: "Tearna Anuban 1",
+    country: "TH",
    description: "Tearna's entry into the world of education.",
 },
 {
@@ -956,6 +1035,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/W8HzhYmnscU?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201904%20-%20Photo%20jumble.jpg",
    title: "Photos Jumble",
+    country: "TH",
    description: "A vibrant collection of joyful moments.",
 },
 {
@@ -963,6 +1043,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/hTb2YPfXPNk?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201903%20-%20Wedding%20day%20Tear%20&%20JP.jpg",
    title: "Wedding Day Tear & JP",
+    country: "TH",
    description: "A celebration of a lifelong journey together.",
 },
 {
@@ -970,6 +1051,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/aApAQkccpLE?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201902%20-%20Tearna%20in%20kindergarden.jpg",
    title: "Tearna In Kindergarden",
+    country: "TH",
    description: "Exploring and growing in early education.",
 },
 {
@@ -977,6 +1059,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/mNtZ4l4yB04?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201901%20-%20Wedding%20Dave%20&%20Noy.jpg",
    title: "Wedding Dave & Noy",
+    country: "TH",
    description: "Cherished moments of togetherness!",
 },
 {
@@ -984,6 +1067,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/5HmOLxnH8mY?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201803%20-%20An%20overview%20of%202018.jpg",
    title: "An Overview Of 2018",
+    country: "TH",
    description: "Highlights and key moments.",
 },
 {
@@ -991,6 +1075,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/Zz4pNAk_g18?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201802%20-%20France.jpg",
    title: "France",
+    country: "FR",
    description: " Discovering Northern France gems.",
 },
 {
@@ -998,6 +1083,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/i3rCxuhOc3k?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201801%20-%20Tearna%20-%201st%20Songkran.jpg",
    title: "Tearna - 1st Songkran",
+    country: "TH",
    description: "First time experiencing the water festival!",
 },
 {
@@ -1005,6 +1091,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/E_m2mo9MPqI?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201702%20-%20Tearna%20is%201%20year%20old.jpg",
    title: "Tearna Is 1 Year Old",
+    country: "TH",
    description: "One year, countless treasured memories!",
 },
 {
@@ -1012,6 +1099,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/hfScUjD9BVw?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201701%20-%20Tearna%20is%20doing%20her%20show.jpg",
    title: "Tearna Is Doing Her Show",
+    country: "TH",
    description: "A little star shining brightly!",
 },
 {
@@ -1019,6 +1107,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/zmmjhvjlDcs?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201602%20-%20Tearna%20is%201%20month%20old.jpg",
    title: "Tearna Is 1 Month Old",
+    country: "TH",
    description: "Precious First Month Moments!",
 },
 {
@@ -1026,6 +1115,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/fymoh4EIbeg?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201601%20-%20Tearna's%20conception.jpg",
    title: "Tearna's Conception",
+    country: "TH",
    description: "The first steps of a new journey!",
 },
 {
@@ -1033,6 +1123,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/qyHodkREBZ4?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201503%20-%20One%20year%20of%20love.jpg",
    title: "One Year Of Love",
+    country: "TH",
    description: "• Our first year together: truly amazing.",
 },
 {
@@ -1040,6 +1131,7 @@ document.addEventListener("DOMContentLoaded", function () {
    link: "https://youtu.be/TiGPzi5wNjk?autoplay=1&rel=0&modestbranding=1",
    imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201502%20-%20Tear's%20birthday.jpg",
    title: "Tear's Birthday",
+    country: "TH",
    description: "• Today, know you mean everything.",
 },
 {
@@ -1047,6 +1139,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/qvFqkE5hX60?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201501%20-%20The%20sunshine%20of%20my%20life.jpg",
   title: "The Sunshine Of My Life",
+    country: "TH",
   description: "With you, every day feels like a sunny day.",
 },
 {
@@ -1054,6 +1147,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/vERvvBlloUI?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201402%20-%20You%20&%20I.jpg",
   title: "You & I",
+    country: "TH",
   description: "You & I : Forever And A Day.<br><br>",
 },
 {
@@ -1061,6 +1155,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/N2Ge_zi9TFY?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201401%20-%20Me%20in%20Hua%20Hin.jpg",
   title: "Me In Hua Hin",
+    country: "TH",
   description: "Hua Hin: beaches to markets.",
 },
 {
@@ -1069,6 +1164,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/lBgBSuqW25k?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201403%20-%20Once%20upon%20a%20girl....jpg",
   title: "Once Uppon A Girl...",
+    country: "TH",
   description: "Tear's destiny-shaping moments.",
 },
 {
@@ -1076,6 +1172,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/Z3ZhqctcWPU?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201305%20-%20Songkran%20in%20Bangkok.jpg",
   title: "Songkran In Bangkok",
+    country: "TH",
   description: "Water Fights: Non-stop fun at Sukhumvit 13.",
 },
 {
@@ -1083,6 +1180,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/f9QJriMV3WY?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201304%20-%20Me%20in%20the%20Philippines.jpg",
   title: "Me In The Philippines",
+    country: "PH",
   description: "Puerto Princesa, Manila, Angeles city & Cebu.",
 },
 {
@@ -1090,6 +1188,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/InhGZIddSRg?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201303%20-%20Me%20in%20Malaysia.jpg",
   title: "Me In Malaysia",
+    country: "MY",
   description: "Kuala Lumpur: Unique blend of cultures.",
 },
 {
@@ -1097,6 +1196,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/007bss4DEeY?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201302%20-%20Me%20in%20Indonesia.jpg",
   title: "Me In Indonesia",
+    country: "ID",
   description: "Exploring Bali was a delightful adventure.",
 },
 {
@@ -1104,6 +1204,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/RCP4bu9Yjdk?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201301%20-%20Me%20in%20Macau.jpg",
   title: "Me In Macau",
+    country: "CN",
   description: "Portuguese architecture meets vibrant casinos.",
 },
 {
@@ -1111,6 +1212,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/yQ8MY98GVLI?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201201%20-%20Me%20in%20Thailand.jpg",
   title: "Me In Thailand",
+    country: "TH",
   description: "Join me as I explore the sights of Thailand.",
 },
 {
@@ -1118,6 +1220,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/PJnm3QowFnk?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/201202%20-%20Me%20in%20Thailand.jpg",
   title: "Me In Thailand",
+    country: "TH",
   description: "Accompany me on my new trip to Thailand.",
 },
 {
@@ -1125,6 +1228,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/Rus36MjmkxY?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/2011%20-%20Me%20in%20China.jpg",
   title: "Me In China",
+    country: "CN",
   description: "Never two without three... videos!<br><br>",
 },
 {
@@ -1132,6 +1236,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/5lcnofa9yX4?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/2010%20-%20Me%20in%20China.jpg",
   title: "Me In China",
+    country: "CN",
   description: "Let's explore new horizons together.",
 },
 {
@@ -1139,6 +1244,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/Allu8dWmZsI&autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/2008%20-%20Me%20in%20China.jpg",
   title: "Me In China",
+    country: "CN",
   description: "Embark on this adventure with me!<br><br>",
 },
 {
@@ -1146,6 +1252,7 @@ document.addEventListener("DOMContentLoaded", function () {
   link: "https://youtu.be/WGwMd6VcFic?autoplay=1&rel=0&modestbranding=1",
   imgSrc: "https://raw.githubusercontent.com/JP77110/My-Videos/main/My%20Thumbnails/202206%20-%20My%20parents.jpg",
   title: "Mes parents",
+     country: "FR",
   description: "• A tribute to people shaping me."
 }
     ];
@@ -1190,7 +1297,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     ${oldYear}
                 </a>
                 <div class="video-info">
-                    <h3 class="video-title">${video.title}</h3>
+                    <div class="video-title-row">
+                        <img class="country-icon" src="Icons/${video.country}.png" alt="${video.country}" title="${video.country}">
+                        <h3 class="video-title">${video.title}</h3>
+                    </div>
                     <div class="video-description">
                         ${video.description}
                         <div class="centered-squares"></div>
