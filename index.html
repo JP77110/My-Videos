@@ -468,20 +468,20 @@ body::before {
 
 <div class="toolbar">
     <nav class="year-selector" aria-label="Select a year">
-        <button class="year-button selected" data-year="2026">2026</button>
-        <button class="year-button" data-year="2025">2025</button>
-        <button class="year-button" data-year="2024">2024</button>
-        <button class="year-button" data-year="2023">2023</button>
-        <button class="year-button" data-year="2022">2022</button>
-        <button class="year-button" data-year="2021">2021</button>
-        <button class="year-button" data-year="2020">2020</button>
-        <button class="year-button" data-year="2019">2019</button>
-        <button class="year-button" data-year="2018">2018</button>
-        <button class="year-button" data-year="2017">2017</button>
-        <button class="year-button" data-year="2016">2016</button>
-        <button class="year-button" data-year="2015">2015</button>
-        <button class="year-button" data-year="2014">2014</button>
-        <button class="year-button" data-year="old">< Us</button>
+        <button type="button" class="year-button selected" data-year="2026">2026</button>
+        <button type="button" class="year-button" data-year="2025">2025</button>
+        <button type="button" class="year-button" data-year="2024">2024</button>
+        <button type="button" class="year-button" data-year="2023">2023</button>
+        <button type="button" class="year-button" data-year="2022">2022</button>
+        <button type="button" class="year-button" data-year="2021">2021</button>
+        <button type="button" class="year-button" data-year="2020">2020</button>
+        <button type="button" class="year-button" data-year="2019">2019</button>
+        <button type="button" class="year-button" data-year="2018">2018</button>
+        <button type="button" class="year-button" data-year="2017">2017</button>
+        <button type="button" class="year-button" data-year="2016">2016</button>
+        <button type="button" class="year-button" data-year="2015">2015</button>
+        <button type="button" class="year-button" data-year="2014">2014</button>
+        <button type="button" class="year-button" data-year="old">&lt; Us</button>
     </nav>
 </div>
 
@@ -509,12 +509,7 @@ body::before {
 </div>
 
 <script>
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js?v=20261117-5').catch(() => {});
-    });
-}
-
+// Service-worker registration intentionally disabled on this index version.
 document.addEventListener("DOMContentLoaded", function () {
 
     const fullscreenBtn = document.getElementById("fullscreenBtn");
@@ -1214,13 +1209,15 @@ document.addEventListener("DOMContentLoaded", function () {
             : `Memories from ${year}`;
     }
 
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            buttons.forEach(b => b.classList.remove("selected"));
-            button.classList.add("selected");
-            render(button.dataset.year);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+    // Year navigation: delegated click handler, robust even if buttons are rebuilt.
+    document.querySelector(".year-selector").addEventListener("click", (event) => {
+        const button = event.target.closest(".year-button");
+        if (!button) return;
+
+        buttons.forEach(b => b.classList.remove("selected"));
+        button.classList.add("selected");
+        render(button.dataset.year);
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
     document.querySelector(".close-page").addEventListener("click", () => {
